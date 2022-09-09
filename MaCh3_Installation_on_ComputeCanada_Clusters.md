@@ -21,10 +21,10 @@ module load gcc/4.8.5
 git clone https://TOKEN@github.com/t2k-software/MaCh3.git
 ```
 
-3. change the directory into the MaCh3 directory and check out '''DBarrow_JointFit''' branch
+3. change the directory into the MaCh3 directory and check out `DBarrow_JointFit` branch
 
 4. Source SetMeUp.sh file
-install root, cmt, irods, niwgreweight if asked;
+install root, cmt, irods, niwgreweight if asked; \\
 IRODS settings:
 answer "no" to the first few questions until seeing the question "save configuration? ". Answer yes to that question and start the build;
 A password to IRODS might be needed and for that go to the T2K website: ` https://t2k.org/asg/oagroup/gadatastorage/index_html`, look for the section of ***iRODS web interface***
@@ -47,11 +47,13 @@ source setup_CUDAProb3.sh
 8. T2KSKTool. This package is remotely stored on GitLab. First check the ability to get to gitlab and follow the instructions to add public key of the cluster to your personal account on gitlab.
 source setup_t2ksktool.sh
 
-9. ```
+9.
+```
 source setup.sh
 ```
 
-10. ```
+10.
+```
 make clean
 make
 ```
