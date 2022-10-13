@@ -45,7 +45,7 @@ source setup_CUDAProb3.sh
 
 8. T2KSKTool. This package is remotely stored on GitLab. First check the ability to get to gitlab and follow the instructions to add public key of the cluster to your personal account on gitlab.
 
-`source setup_t2ksktool.sh`
+    `source setup_t2ksktool.sh`
 
 9. `source setup.sh`
 
