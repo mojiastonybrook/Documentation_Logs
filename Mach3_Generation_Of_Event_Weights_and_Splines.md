@@ -19,7 +19,15 @@
     to convert weight file into the spline files which are the input of MaCh3
 ### Installation of T2KReWeight
 
-    
+### Compilations of executables in OAGenWeightsApps
+- go to the `OAGenWeightsApps` directory
+- make a directory `mkdir build` to store the build from codes
+- go to  `build` directory `cd build` and run cmake for pre-compileing `cmake ../ -DUSE_SK=ON` with the 'sk' configuration
+- compile the codes 
+    ```
+    make 
+    make install
+    ```
 ## An Example on Running OAGenWeightsApps
 ### Requirements
 Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other packages where the dials of interests are implemented
@@ -34,4 +42,5 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
     ```
 - go to the directory of `OAGenWeightsApps`. The branch is `DBarrow_JointFit`. The main source codes live in `app/SK` directory.
    - Make changes to the existing `.cxx` files if you want. Or
-   - Create a new `.cxx` file for the app you want to build. This new code should be added in the `CMakeList.txt` to be available for compiling.    
+   - Create a new `.cxx` file for the app you want to build. This new code should be added in the `CMakeList.txt` to be available for compiling. The corresponding modifications could follow the examples made by the original executables.
+-  Compile the source codes to executabes.   
