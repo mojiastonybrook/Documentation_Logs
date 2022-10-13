@@ -32,4 +32,6 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
     source {PathToT2kReweight}/build/Linux/setup.sh
     ...
     ```
-    
+- go to the directory of `OAGenWeightsApps`. The branch is `DBarrow_JointFit`. The main source codes live in `app/SK` directory.
+   - Make changes to the existing `.cxx` files if you want. Or
+   - Create a new `.cxx` file for the app you want to build. This new code should be added in the `CMakeList.txt` to be available for compiling.    
