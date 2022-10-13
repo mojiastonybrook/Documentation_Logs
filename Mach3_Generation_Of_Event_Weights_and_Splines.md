@@ -11,7 +11,9 @@
 - neut
     > the dial to tune single matrix element implemented as `ROXXXX` 
 - OAGenWeightsApps
+
     to generate weights using T2KReWeights via the dials implemented in the above packages
 - XsecResponse
+
     to convert weight file into the spline files which are the input of MaCh3
     
