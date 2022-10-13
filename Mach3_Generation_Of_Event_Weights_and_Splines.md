@@ -5,7 +5,7 @@
 ### List of tools
 1. T2KReWeights 
  
-...the core package for event-reweighting providing libs and parent classes that could be utilized by user-defined softwares to perform reweighting-related tasks.
+ ...the core package for event-reweighting providing libs and parent classes that could be utilized by user-defined softwares to perform reweighting-related tasks.
 
 2. NIWGReWeight
 3. GeantReWeight
