@@ -21,7 +21,7 @@
 
 ### Compilations of executables in OAGenWeightsApps
 - go to the `OAGenWeightsApps` directory
-- make a directory `mkdir build` to store the build from codes
+- make a directory `mkdir build` to store the build from codes for first-time compilation.
 - go to  `build` directory `cd build` and run cmake for pre-compileing `cmake ../ -DUSE_SK=ON` with the 'sk' configuration
 - compile the codes 
     ```
@@ -43,4 +43,12 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
 - go to the directory of `OAGenWeightsApps`. The branch is `DBarrow_JointFit`. The main source codes live in `app/SK` directory.
    - Make changes to the existing `.cxx` files if you want. Or
    - Create a new `.cxx` file for the app you want to build. This new code should be added in the `CMakeList.txt` to be available for compiling. The corresponding modifications could follow the examples made by the original executables.
--  Compile the source codes to executabes.   
+-  Compile the source codes to executabes as the instruction of `compilation of executables in OAGenWeightsApps`.
+-  setup the necessary computing environment by sourcing the shell script of `OAGenWeightsApps` whenever to use the executables
+    ```
+    source {PathToOAGenWeightsApps}/build/Linux/setup.sh
+    ```
+- run the executable
+    ```
+    executable -s -o
+    ```
