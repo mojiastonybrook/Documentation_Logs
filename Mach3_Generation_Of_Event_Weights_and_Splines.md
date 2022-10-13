@@ -21,3 +21,15 @@
 
     
 ## An Example on Running OAGenWeightsApps
+### Requirements
+Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other packages where the dials of interests are implemented
+### Using OAGenWeightsApps
+- soruce the setup script. The file runs the shell scripts of the tool packages above and `root` to setup the necessary environmental variables. An example of such a setup file is
+    ```
+    source {PathToRoot}/bin/this.root
+    source {PathToNeut}/build/Linux/setup.sh
+    source {PathToNiwgReweight}/build/Linux/setup.sh
+    source {PathToT2kReweight}/build/Linux/setup.sh
+    ...
+    ```
+    
