@@ -7,9 +7,10 @@
  
     the core package for event-reweighting providing libs and parent classes that could be utilized by user-defined softwares to perform reweighting-related tasks.
 - NIWGReWeight
+    > `AdlerAngle_Dial` implemented as the form like `AdHocPiMom_CC_p_pip`
 - GeantReWeight
 - neut
-    > the dial to tune single matrix element implemented as `ROXXXX` 
+    > the dial to tune single matrix element implemented as the form like `ROXXXX` 
 - OAGenWeightsApps
 
     to generate weights using T2KReWeights via the dials implemented in the above packages
@@ -17,3 +18,4 @@
 
     to convert weight file into the spline files which are the input of MaCh3
     
+## An Example on Running OAGenWeightsApps
