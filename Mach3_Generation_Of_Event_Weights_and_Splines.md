@@ -60,7 +60,7 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
 This package is used to convert weights into splines. The splines are stored as `.root` files that could be direct input to `MaCh3`
 - Setup the computing environment.
     ```
-     export LD_LIBRARY_PATH={PathToXsecResponseDirectory}/lib:$LD_LIBRARY_PATH
+     export LD_LIBRARY_PATH={PathToXsecResponse}/lib:$LD_LIBRARY_PATH
     ```
 - Running XsecResponse needs MC files, its corresponding weight files.
 - An example of command to run XsecResponse:
