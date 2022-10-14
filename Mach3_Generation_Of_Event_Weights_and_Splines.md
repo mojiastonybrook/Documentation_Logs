@@ -18,6 +18,9 @@
 
     to convert weight file into the spline files which are the input of MaCh3
 ### Installation of T2KReWeight
+To use `T2KReWeight`, at least one of `neut`,`NIWGReWeight`and `GeantReWeight` need to be installed first.
+
+Follow the instructions for the packages on their github pages.
 
 ### Compilations of executables in OAGenWeightsApps
 - go to the `OAGenWeightsApps` directory
@@ -28,6 +31,8 @@
     make 
     make install
     ```
+### Compliations of XsecResponse
+
 ## Running OAGenWeightsApps
 ### Requirements
 Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other packages where the dials of interests are implemented
