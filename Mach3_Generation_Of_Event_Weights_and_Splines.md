@@ -28,7 +28,7 @@
     make 
     make install
     ```
-## An Example on Running OAGenWeightsApps
+## Running OAGenWeightsApps
 ### Requirements
 Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other packages where the dials of interests are implemented
 ### Using OAGenWeightsApps
@@ -53,6 +53,25 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
     ```
     genWeights_RAW_T2KSKAtm_AdlerAngle_MatrixElement_fromFile -s {PathToMCs}/{fileName}.root -o {PathToOutputDir}/{outputFileName}.root
     ```
-    `-s` the source MCs 
+    `-s` the source MCs;  
     `-o` output files
-    
+
+## Running XsecResponse
+This package is used to convert weights into splines. The splines are stored as `.root` files that could be direct input to `MaCh3`
+- Setup the computing environment.
+    ```
+     export LD_LIBRARY_PATH={PathToXsecResponseDirectory}/lib:$LD_LIBRARY_PATH
+    ```
+- Running XsecResponse needs MC files, its corresponding weight files.
+- An example of command to run XsecResponse:
+    ```
+    ${xsecDir}/bin/make_xsec_response_sk_2019_2d \
+                -w ${weightfile_dir}/${filename}_Sample${sampleID}_Channel${channelID}_T2KReWeight_Weights.root \
+                -m ${rootfile_dir}/${filename}_Sample${sampleID}_Channel${channelID}.root \
+                -s ${sampleID} \
+                -o ${output_dir}/${filename}_Sample${sampleID}_Channel${channelID}_XsecResponse_Splines.root
+    ```
+    `-w` weight files;
+    `-m` MC files;
+    `-s` sample ID;
+    `-o` saved as the output files
