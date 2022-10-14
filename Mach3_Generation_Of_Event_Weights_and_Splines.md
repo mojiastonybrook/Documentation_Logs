@@ -48,7 +48,11 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
     ```
     source {PathToOAGenWeightsApps}/build/Linux/setup.sh
     ```
-- run the executable
+- run the executable.
+    need to provide the Monte Carlo files to the executable. The MCs are stored as `.root` files. Here is an example of the command to run such a executable:
     ```
-    executable -s -o
+    genWeights_RAW_T2KSKAtm_AdlerAngle_MatrixElement_fromFile -s {PathToMCs}/{fileName}.root -o {PathToOutputDir}/{outputFileName}.root
     ```
+    `-s` the source MCs 
+    `-o` output files
+    
