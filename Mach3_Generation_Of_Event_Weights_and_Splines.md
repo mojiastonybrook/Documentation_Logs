@@ -6,16 +6,16 @@
 - T2KReWeights 
  
     the core package for event-reweighting providing libs and parent classes that could be utilized by user-defined softwares to perform reweighting-related tasks.
-       - branch on Seawulf `feature_SK_SI_dev`
+    - branch on Seawulf `feature_SK_SI_dev`
 
 - NIWGReWeight
-       - branch on Seawulf `OA2021Tidy`
-         > `AdlerAngle_Dial` implemented as the form like `AdHocPiMom_CC_p_pip`
+    - branch on Seawulf `OA2021Tidy`
+    > `AdlerAngle_Dial` implemented as the form like `AdHocPiMom_CC_p_pip`
 - GeantReWeight
-       - branch on Seawulf `feature_PN`
+    - branch on Seawulf `feature_PN`
 - neut
-       - branch on Seawulf `PreOA2021DevelopmentMerge` 
-         > the dial to tune single matrix element implemented as the form like `ROXXXX` 
+    - branch on Seawulf `PreOA2021DevelopmentMerge` 
+    > the dial to tune single matrix element implemented as the form like `ROXXXX` 
 - OAGenWeightsApps
 
     to generate weights using T2KReWeights via the dials implemented in the above packages
