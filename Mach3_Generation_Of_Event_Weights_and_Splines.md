@@ -23,6 +23,7 @@ To use `T2KReWeight`, at least one of `neut`,`NIWGReWeight`and `GeantReWeight` n
 Follow the instructions for the packages on their github pages.
 
 ### Compilations of executables in OAGenWeightsApps
+Based on the branch `DBarrow_JointFit`
 - go to the `OAGenWeightsApps` directory
 - make a directory `mkdir build` to store the build from codes for first-time compilation.
 - go to  `build` directory `cd build` and run cmake for pre-compileing `cmake ../ -DUSE_SK=ON` with the 'sk' configuration
@@ -32,6 +33,8 @@ Follow the instructions for the packages on their github pages.
     make install
     ```
 ### Compliations of XsecResponse
+The branch is `DBarrow_JointFit`
+- from the top directory of this package run `make`
 
 ## Running OAGenWeightsApps
 ### Requirements
