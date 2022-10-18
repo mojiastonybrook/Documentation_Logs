@@ -95,4 +95,9 @@ This package is used to convert weights into splines. The splines are stored as 
     `-o` saved as the output files
 
 ## Example: Production of Event Weights by Matrix_Element_Dial
-This dial is mianly used for CC1\pi
+This dial is mianly used for CC1\pi samples. For `SK_atmospheric_FC_sub-GeV_neutrino` samples there are three catagories that are cc1\pi enriched,
+- `1 Ring e-like 1 decay`
+- `1 Ring mu-like 2 decay`
+- `2 Ring pi0-like`
+
+
