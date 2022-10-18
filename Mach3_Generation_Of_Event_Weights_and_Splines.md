@@ -61,7 +61,7 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
 - go to the directory of `OAGenWeightsApps`. The branch is `DBarrow_JointFit`. The main source codes live in `app/SK` directory.
    - Make changes to the existing `.cxx` files if you want. Or
    - Create a new `.cxx` file for the app you want to build. This new code should be added in the `CMakeList.txt` to be available for compiling. The corresponding modifications could follow the examples made by the original executables.
--  Compile the source codes to executabes as the instruction of `compilation of executables in OAGenWeightsApps`.
+-  Compile the source codes to executabes as the instruction of **compilation of executables in OAGenWeightsApps**.
 -  setup the necessary computing environment by sourcing the shell script of `OAGenWeightsApps` whenever to use the executables
     ```
     source {PathToOAGenWeightsApps}/build/Linux/setup.sh
