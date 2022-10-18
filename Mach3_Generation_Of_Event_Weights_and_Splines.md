@@ -69,7 +69,7 @@ Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other pac
 - run the executable.
     need to provide the Monte Carlo files to the executable. The MCs are stored as `.root` files. Here is an example of the command to run such a executable:
     ```
-    genWeights_RAW_T2KSKAtm_AdlerAngle_MatrixElement_fromFile -s {PathToMCs}/{fileName}.root -o {PathToOutputDir}/{outputFileName}.root
+    {PathToExe}/genWeights_T2KSKAtm_AdlerAngle_MatrixElement -s {PathToMCs}/{fileName}.root -o {PathToOutputDir}/{outputFileName}.root
     ```
     `-s` the source MCs;  
     `-o` output files
@@ -96,8 +96,8 @@ This package is used to convert weights into splines. The splines are stored as 
 
 ## Example: Production of Event Weights by Matrix_Element_Dial
 This dial is mianly used for CC1\pi samples. For `SK_atmospheric_FC_sub-GeV_neutrino` samples there are three catagories that are cc1\pi enriched,
-- `1 Ring e-like 1 decay` with `ATMPDEventType` or sample ID: `2`
-- `1 Ring mu-like 2 decay` with sample ID: `6`
+- `1 Ring e-like 1 decay` with `ATMPDEventType` or sample ID: `2`, oscillation channel ID: `1` as `nue->nue`
+- `1 Ring mu-like 2 decay` with sample ID: `6`, oscillation channel ID: `5` as `numu->numu`
 - `2 Ring pi0-like` with sample ID: `7`
 
 
