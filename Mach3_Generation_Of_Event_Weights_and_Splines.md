@@ -99,12 +99,22 @@ This dial is mianly used for CC1\pi samples. For `SK_atmospheric_FC_sub-GeV_neut
 - `1 Ring e-like 1 decay` with `ATMPDEventType` or sample ID: `2`, oscillation channel ID: `1` as `nue->nue`
 - `1 Ring mu-like 2 decay` with sample ID: `6`, oscillation channel ID: `5` as `numu->numu`
 - `2 Ring pi0-like` with sample ID: `7`
+
 A copy of MCs of `SK_atmospheric` samples is store at SeaWulf:
 ```
 /gpfs/projects/McGrewGroup/jjjiang/my_MaCh3/MaCh3/inputs/skatm/SKMC/
 ```
 An example of the names of the MC files is: `sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1.root`
 
-The directory together with the name of a certainty MC file should be fed to `OAGenWeightsApps` executable as the `-s` parameter
+The directory together with the name of a certainty MC file should be fed to `OAGenWeightsApps` executable as the `-s` parameter.
+
+This the example codes to run `OAGenWeightsApps` on SeaWulf interactively:
+```
+source /gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/OAGenWeightsApps/build/Linux/setup.sh
+cd ~/scratch/T2KReWeightOutput/
+cd ${work_directory}
+
+/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/OAGenWeightsApps/build/Linux/bin/genWeights_T2KSKAtm_AdlerAngle_MatrixElement -s /gpfs/projects/McGrewGroup/jjjiang/my_MaCh3/MaCh3/inputs/skatm/SKMC/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1.root -o sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_T2KReWeight_Weights.root &> Sample2_Channel1.log
+```
 
 
