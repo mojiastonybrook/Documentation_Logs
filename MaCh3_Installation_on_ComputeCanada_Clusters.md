@@ -33,15 +33,17 @@ A password to IRODS might be needed and for that go to the T2K website: ` https:
 But the server of iRODS might be problematic for now, so expect downloading nothing from the running the command.
 
 5. change the content in the `setup_niwgreweight.sh` file to the following to make sure of the access to github when using personal token:
-```
-git clone https://TOKEN@github.com/t2k-software/NIWGReWeight.git
-```
+    ```
+    git clone https://TOKEN@github.com/t2k-software/NIWGReWeight.git
+    ```
+    
     then `source setup_niwgreweight.sh`
 
 6. change the content in the `setup_CUDAProb3.sh` to make sure of the access to github if using personal token:
-```
-git clone https:/TOKEN@github.com:/dbarrow257/CUDAProb3
-```
+    ```
+    git clone https:/TOKEN@github.com:/dbarrow257/CUDAProb3
+    ```
+    
     then `source setup_CUDAProb3.sh`
 
 7. `source setup_psyche.sh`
