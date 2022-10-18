@@ -93,3 +93,6 @@ This package is used to convert weights into splines. The splines are stored as 
     `-m` MC files;
     `-s` sample ID;
     `-o` saved as the output files
+
+## Example: Production of Event Weights by Matrix_Element_Dial
+This dial is mianly used for **CC1\pi**
