@@ -17,11 +17,16 @@
     - branch on Seawulf `PreOA2021DevelopmentMerge` 
     > the dial to tune single matrix element implemented as the form like `ROXXXX` 
 - OAGenWeightsApps
-
     to generate weights using T2KReWeights via the dials implemented in the above packages
-- XsecResponse
-
+    - branch on Seawulf `DBarrow_JointFit`
+- XsecResponse  
     to convert weight file into the spline files which are the input of MaCh3
+    - branch on Seawulf `DBarrow_JointFit`
+ 
+In addition, the following might be need as well
+- FSIFitter
+    - branch on Seawulf `bugfix/shebang`
+    
 ### Installation of T2KReWeight
 To use `T2KReWeight`, at least one of `neut`,`NIWGReWeight`and `GeantReWeight` need to be installed first.
 
