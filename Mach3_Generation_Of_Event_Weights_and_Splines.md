@@ -46,6 +46,8 @@ Based on the branch `DBarrow_JointFit`
 The branch is `DBarrow_JointFit`
 - from the top directory of this package run `make`
 
+The source codes are stored in `src_bin` sub-directory.
+
 ## Running OAGenWeightsApps
 ### Requirements
 Make sure of having installed `T2KReWeights` `NIWGReWeight` `neut` and other packages where the dials of interests are implemented
@@ -116,5 +118,10 @@ cd ${work_directory}
 
 /gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/OAGenWeightsApps/build/Linux/bin/genWeights_T2KSKAtm_AdlerAngle_MatrixElement -s /gpfs/projects/McGrewGroup/jjjiang/my_MaCh3/MaCh3/inputs/skatm/SKMC/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1.root -o sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_T2KReWeight_Weights.root &> Sample2_Channel1.log
 ```
+## Example: Conversion of Weights from Mtuples to Splines
+The weight files produced from the `OAGenWeightsApps` store weights from various dials as mtuples. These mtuples should be converted into splines if to be used as inputs of MaCh3. The conversion is done by running `XsecResponse`.
+
+The key parts in modifying a source script from this package in order to produce corresponding splines for a respective dial from its mtuples are to add name of the branch/dial into the list of systematics already listed, and then declare which indexed knot is the nominal position.
+
 
 
