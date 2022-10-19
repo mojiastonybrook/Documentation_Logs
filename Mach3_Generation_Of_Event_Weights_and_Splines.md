@@ -130,10 +130,10 @@ export LD_LIBRARY_PATH=/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/
 cd ~/scratch/T2KReWeightOutput/
 cd ${work_directory}
 
-/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/XsecResponse/bin/make_xsec_response_sk_2019_2d_ \
-                   -w ${weightfile_dir}/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_T2KReWeight_Weights.root \
-                   -m ${rootfile_dir}/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1.root \
-                   -s 2 \
-                   -o ${output_dir}/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_XsecResponse_Splines.root
+/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/XsecResponse/bin/make_xsec_response_sk_2019_2d_pionMom \
+           -w /gpfs/scratch/mojia/T2KReWeightOutput/SKAtmWeights_PionMomDial/correlatedVar_7knots/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_T2KReWeight_Weights.root \
+           -m /gpfs/projects/McGrewGroup/jjjiang/my_MaCh3/MaCh3/inputs/skatm/SKMC/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1.root \
+           -s 2 \
+           -o sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_XsecResponse_Splines.root
 ```
 
