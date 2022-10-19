@@ -123,6 +123,8 @@ The weight files produced from the `OAGenWeightsApps` store weights from various
 
 The key parts in modifying a source script from this package in order to produce corresponding splines for a respective dial from its mtuples are to add name of the branch/dial into the list of systematics already listed, and then declare which indexed knot is the nominal position.
 
+Running the executables require the templates stored at the package's subdiretories. Recommend running the executable from the top directory.
+
 This is an example to run `XsecResponse` for Low Pion Momentum dials on SeaWulf interactively:
 ```
 export LD_LIBRARY_PATH=/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/XsecResponse/lib:$LD_LIBRARY_PATH
