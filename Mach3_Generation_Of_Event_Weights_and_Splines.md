@@ -121,9 +121,9 @@ cd ${work_directory}
 ## Example: Conversion of Weights from Mtuples to Splines
 The weight files produced from the `OAGenWeightsApps` store weights from various dials as mtuples. These mtuples should be converted into splines if to be used as inputs of MaCh3. The conversion is done by running `XsecResponse`.
 
-The key parts in modifying a source script from this package in order to produce corresponding splines for a respective dial from its mtuples are to add name of the branch/dial into the list of systematics already listed, and then declare which indexed knot is the nominal position.
+- The key parts in modifying a source script from this package in order to produce corresponding splines for a respective dial from its mtuples are to add name of the branch/dial into the list of systematics already listed, and then declare which indexed knot is the nominal position.
 
-Running the executables require the templates stored at the package's subdiretories. Recommend running the executable from the top directory.
+- Running the executables require the templates stored at the package's subdiretories, so running the executable from the top directory is recommended.
 
 This is an example to run `XsecResponse` for Low Pion Momentum dials on SeaWulf interactively:
 ```
