@@ -123,5 +123,17 @@ The weight files produced from the `OAGenWeightsApps` store weights from various
 
 The key parts in modifying a source script from this package in order to produce corresponding splines for a respective dial from its mtuples are to add name of the branch/dial into the list of systematics already listed, and then declare which indexed knot is the nominal position.
 
+This is an example to run `XsecResponse` for Low Pion Momentum dials on SeaWulf interactively:
+```
+export LD_LIBRARY_PATH=/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/XsecResponse/lib:$LD_LIBRARY_PATH
 
+cd ~/scratch/T2KReWeightOutput/
+cd ${work_directory}
+
+/gpfs/projects/McGrewGroup/mojia/t2ksoftware/t2kreweight/XsecResponse/bin/make_xsec_response_sk_2019_2d_ \
+                   -w ${weightfile_dir}/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_T2KReWeight_Weights.root \
+                   -m ${rootfile_dir}/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1.root \
+                   -s 2 \
+                   -o ${output_dir}/sk4_fcmc_tau_pcmc_ummc_fQv4r0_sf_minituple_500yr_Sample2_Channel1_XsecResponse_Splines.root
+```
 
