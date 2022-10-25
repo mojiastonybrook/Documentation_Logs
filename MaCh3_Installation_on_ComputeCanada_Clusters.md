@@ -20,8 +20,8 @@ module load gcc/4.8.5
 ```
 git clone https://TOKEN@github.com/t2k-software/MaCh3.git
 ```
-#### note
-To setup a personal token on Github follow the link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+    #### note
+    To setup a personal token on Github follow the link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 3. change the directory into the MaCh3 directory and check out `DBarrow_JointFit` branch
 
