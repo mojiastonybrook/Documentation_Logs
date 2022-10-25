@@ -20,7 +20,8 @@ module load gcc/4.8.5
 ```
 git clone https://TOKEN@github.com/t2k-software/MaCh3.git
 ```
-   #### note
+   
+   ### note
    To setup a personal token on Github follow the link: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 3. change the directory into the MaCh3 directory and check out `DBarrow_JointFit` branch
@@ -59,7 +60,14 @@ But the server of iRODS might be problematic for now, so expect downloading noth
     How to set up the public key for GitLab:
     - in home directory run `ssh-keygen -t ed25519`. Enter the directory and name you want the key file to be saved with. Enter a phrase.
     - if the key file is not stored with the default directory or name, the following steps should be taken to make the key workable:
-      - `eval $(ssh-agent -s)`   
+      - `eval $(ssh-agent -s)` 
+      - `ssh-add <directory to private SSH key>` For example `ssh-add /home/mojia/.ssh/id_ed25519_t2kGitLab`. Enter the passphrase if asked
+      - create a config file under `.ssh` directory. For example `vim .ssh/config`. In the configuration file write:
+        ```
+        Host git.t2k.org
+          PreferredAuthentications publickey
+          IdentityFile ~/.ssh/id_ed25519_t2kGitLab.pub
+        ```  
 
 9. `source setup.sh`
 
