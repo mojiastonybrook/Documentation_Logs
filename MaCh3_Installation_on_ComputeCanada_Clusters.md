@@ -53,7 +53,7 @@ But the server of iRODS might be problematic for now, so expect downloading noth
 
 8. T2KSKTool. 
  
-    This package is remotely stored on GitLab. First check the ability to get to gitlab and follow the instructions to add public key of the cluster to your personal account on gitlab.
+    This package is remotely stored on GitLab. First check the ability to get to gitlab https://git.t2k.org/users/sign_in and follow the instructions to add public key of the cluster to your personal account on gitlab.
 
     then `source setup_t2ksktool.sh`
     ### note
