@@ -68,7 +68,8 @@ But the server of iRODS might be problematic for now, so expect downloading noth
           PreferredAuthentications publickey
           IdentityFile ~/.ssh/id_ed25519_t2kGitLab.pub
         ```  
-
+    - Paste the public key to the GitLab account. Look for file ended with `.pub`. On GitLab, select the avatar, then ***Preference*** and then on the left side bar ***SSH Keys***
+    
 9. `source setup.sh`
 
 10. 
