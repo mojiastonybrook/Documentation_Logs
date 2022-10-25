@@ -43,7 +43,7 @@ But the server of iRODS might be problematic for now, so expect downloading noth
 
 6. change the content in the `setup_CUDAProb3.sh` to make sure of the access to github if using personal token:
     ```
-    git clone https:/TOKEN@github.com:/dbarrow257/CUDAProb3
+    git clone https://TOKEN@github.com:/dbarrow257/CUDAProb3
     ```
     
     then `source setup_CUDAProb3.sh`
