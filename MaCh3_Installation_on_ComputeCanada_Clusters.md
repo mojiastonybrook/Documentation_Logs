@@ -55,6 +55,11 @@ But the server of iRODS might be problematic for now, so expect downloading noth
     This package is remotely stored on GitLab. First check the ability to get to gitlab and follow the instructions to add public key of the cluster to your personal account on gitlab.
 
     then `source setup_t2ksktool.sh`
+    ### note
+    How to set up the public key for GitLab:
+    - in home directory run `ssh-keygen -t ed25519`. Enter the directory and name you want the key file to be saved with. Enter a phrase.
+    - if the key file is not stored with the default directory or name, the following steps should be taken to make the key workable:
+      - `eval $(ssh-agent -s)`   
 
 9. `source setup.sh`
 
