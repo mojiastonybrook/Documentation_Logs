@@ -8,11 +8,16 @@ Running SigmaVariation needs Monte Carlo samples(mtuple), spline files(weights),
 - Covariance Matrix
 - Cfg
 
-Link the sk atm mtuple files and the spline files in MaCh3 subdirectory `input/skatm`. An exampl of running SigmaVariation on ComputeCanada is shown here.
+An exampl of running SigmaVariation on ComputeCanada is shown here.
+
 The default sk atm muple files and corresponding spline files on Cedar of ComputeCanada are stored in 
 ```
 ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_skatm/SKMtuples_Sept052022
 ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_skatm_spline/SKSplines_Sept052022
+```
+Link these sk atm mtuple files and the spline files in MaCh3 subdirectory `input/skatm` as `SKMC` and `SKMCSplines`. 
+```
+ln -s 
 ```
 
 ## Implementing Spline from An Additional Dial
