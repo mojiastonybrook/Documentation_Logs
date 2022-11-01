@@ -61,7 +61,7 @@ Prepare a remote job script for convenience, here is an example script:
 
 #SBATCH --time=12:00:00                                                                                                                                                
 #SBATCH --mail-user=mo.jia@stonybrook.edu                                                                                                                        
-#SBATCH --mail-type=start,end                                                                                                                                                
+#SBATCH --mail-type=END,FAIL                                                                                                                                                
 #SBATCH --job-name=AtmSigmaVar                                                                                                     
 #SBATCH --mem-per-cpu=4096M                                                                                                                                            
 #SBATCH --cpus-per-task=16                                                                                                                                             
