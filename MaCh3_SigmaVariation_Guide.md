@@ -30,6 +30,7 @@ ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam_
 Link the two directories as `SK_19b_13av7_fitqun20` and `SK_19b_13av7_splines20` directories in `input`.
 
 Set up the configuration of sigmaVariation. Change the content in the cfg file `configs/AtmosphericConfigs/AtmConfig.cfg` according to the need.
+- `OUTPUTNAME` 
 - `OSCPARAM` Oscillation parameter sets, `Asimov A` or `UnOsc`. Use `UnOsc`.
 - `ATMPDFS` atm samples 
 
@@ -48,11 +49,30 @@ Some setting in the source code of sigmaVariation also might need change accordi
 ```
 to enable the cross-section uncertainties only for solo atm samples. Whenever to run an exceutable, do the followings first:
 ```
-# in MaCh top directory
+# at MaCh top directory
 source setup.sh
 make clean
 make
 ```
+
+Prepare a remote job script for convenience, here is an example script:
+```
+#!/bin/bash                                                                                                                                                            
+
+#SBATCH --time=12:00:00                                                                                                                                                
+#SBATCH --mail-user=mo.jia@stonybrook.edu                                                                                                                        
+#SBATCH --mail-type=start,end                                                                                                                                                
+#SBATCH --job-name=AtmSigmaVar                                                                                                     
+#SBATCH --mem-per-cpu=4096M                                                                                                                                            
+#SBATCH --cpus-per-task=16                                                                                                                                             
+#SBATCH --account=rpp-blairt2k                                                                                                                                         
+
+cd /home/mojia/T2KSKJointFit_software/MaCh3
+source setup.sh
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
+```
+
 
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
