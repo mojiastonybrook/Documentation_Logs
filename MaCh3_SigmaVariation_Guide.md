@@ -1,12 +1,19 @@
 # SigmaVariation Study with Low Pion Momentum Dials
 ## Running SigmaVariation
-Source code for the so-called `SigmaVariation` executable in MaCh3 is stored as `AtmJointFit_Src/AtmSigmaVar.cpp` in `DBarrow_JointFit` branch.
+The source code for the so-called `SigmaVariation` executable in MaCh3 is stored as `AtmJointFit_Src/AtmSigmaVar.cpp` in `DBarrow_JointFit` branch.
 
 Running SigmaVariation needs Monte Carlo samples(mtuple), spline files(weights), covariance matrix files(correlations between systematics) and cfg file(marco script to setup).
 - Mtuple
 - Spline
 - Covariance Matrix
 - Cfg
+
+Link the sk atm mtuple files and the spline files in MaCh3 subdirectory `input/skatm`. An exampl of running SigmaVariation on ComputeCanada is shown here.
+The default sk atm muple files and corresponding spline files on Cedar of ComputeCanada are stored in 
+```
+${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_skatm/SKMtuples_Sept052022
+${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_skatm_spline/SKSplines_Sept052022
+```
 
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
