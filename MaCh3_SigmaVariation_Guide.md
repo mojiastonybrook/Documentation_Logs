@@ -33,6 +33,27 @@ Set up the configuration of sigmaVariation. Change the content in the cfg file `
 - `OSCPARAM` Oscillation parameter sets, `Asimov A` or `UnOsc`. Use `UnOsc`.
 - `ATMPDFS` atm samples 
 
+Some setting in the source code of sigmaVariation also might need change accordingly. In `AtmJointFit_Src/AtmSigmaVar.cpp` with the following setup
+```
+  bool useT2K = false;
+
+  bool useAtmFlux = false;         // true
+  bool useSKCalibration = true;    // true
+  bool useAtmSKDet = false;
+  bool useBeamSKDet = false;
+  bool useSKDetBeam = false;
+  bool useATMPDDet = false;         // true
+  bool useXsec = true;
+  bool skipFlux = true;
+```
+to enable the cross-section uncertainties only for solo atm samples. Whenever to run an exceutable, do the followings first:
+```
+# in MaCh top directory
+source setup.sh
+make clean
+make
+```
+
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
 
