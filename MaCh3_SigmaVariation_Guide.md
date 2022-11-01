@@ -17,7 +17,15 @@ ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_skatm_sp
 ```
 Link these sk atm mtuple files and the spline files in MaCh3 subdirectory `input/skatm` as `SKMC` and `SKMCSplines`. 
 ```
-ln -s 
+#from MaCh3 top directory
+cd input/skatm
+ln -s PATH_TO_DIRECTORY DIRECTORY_NAME
+```
+
+If to use t2k beam mtuple and spline files, those files are stored in 
+```
+${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam/T2KMtuples_Sept052022/
+${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam_spline/T2KSplines_Sept052022/
 ```
 
 ## Implementing Spline from An Additional Dial
