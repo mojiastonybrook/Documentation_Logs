@@ -31,7 +31,7 @@ Link the two directories as `SK_19b_13av7_fitqun20` and `SK_19b_13av7_splines20`
 
 Set up the configuration of sigmaVariation. Change the content in the cfg file `configs/AtmosphericConfigs/AtmConfig.cfg` according to the need.
 - `OSCPARAM` Oscillation parameter sets, `Asimov A` or `UnOsc`. Use `UnOsc`.
-- `ATMPDFS` Inpute atm samples 
+- `ATMPDFS` atm samples 
 
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
