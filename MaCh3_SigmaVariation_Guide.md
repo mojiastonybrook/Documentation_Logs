@@ -22,11 +22,16 @@ cd input/skatm
 ln -s PATH_TO_DIRECTORY DIRECTORY_NAME
 ```
 
-If to use t2k beam mtuple and spline files, those files are stored in 
+In case to use t2k beam mtuple and spline files, those files are stored in 
 ```
-${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam/T2KMtuples_Sept052022/
-${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam_spline/T2KSplines_Sept052022/
+${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam/T2KMtuples_Sept052022
+${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam_spline/T2KSplines_Sept052022
 ```
+Link the two directories as `SK_19b_13av7_fitqun20` and `SK_19b_13av7_splines20` directories in `input`.
+
+Set up the configuration of sigmaVariation. Change the content in the cfg file `configs/AtmosphericConfigs/AtmConfig.cfg` according to the need.
+- `OSCPARAM` Oscillation parameter sets, `Asimov A` or `UnOsc`. Use `UnOsc`.
+- `ATMPDFS` Inpute atm samples 
 
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
