@@ -72,6 +72,7 @@ source setup.sh
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
 ```
+## Changes to deal with CUDA issue
 
 
 ## Implementing Spline from An Additional Dial
