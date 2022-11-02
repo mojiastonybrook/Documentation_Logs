@@ -72,7 +72,20 @@ source setup.sh
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
 ```
-## Changes to deal with CUDA issue
+
+### Notes
+Generate specific cfg file for each atm sample before running SigmaVariation. Check the contents in `configs/AtmosphericConfigs/`, if there are no such cfg files like `AtmSample_X.cfg`, then run to generate them:
+```
+python makeConfigs.py
+```
+Related error when running SigmaVariation might be like:
+```
+terminate called after throwing an instance of 'libconfig::FileIOException'
+  what():  FileIOException
+/var/spool/slurmd/job49425086/slurm_script: line 14:  5584 Aborted                 (core dumped) ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
+```
+
+### Changes to deal with CUDA issue
 
 
 ## Implementing Spline from An Additional Dial
