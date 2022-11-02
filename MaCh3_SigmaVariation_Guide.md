@@ -49,7 +49,7 @@ Some setting in the source code of sigmaVariation also might need change accordi
 ```
 to enable the cross-section uncertainties only for solo atm samples. Whenever to run an exceutable, do the followings first:
 ```
-# at MaCh top directory
+# at MaCh3 top directory
 source setup.sh
 make clean
 make
@@ -74,19 +74,37 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ```
 
 ### Notes
-Generate specific cfg file for each atm sample before running SigmaVariation. Check the contents in `configs/AtmosphericConfigs/`, if there are no such cfg files like `AtmSample_X.cfg`, then run to generate them:
+Generate specific cfg file for each atm sample before running SigmaVariation. Check the contents in `configs/AtmosphericConfigs/`, if there are no such cfg files like `AtmSample_X.cfg`, then run the command to generate them:
 ```
 python makeConfigs.py
 ```
-Related error when running SigmaVariation might be like:
+Related error when running SigmaVariation might be like if such configuration files do not exist:
 ```
 terminate called after throwing an instance of 'libconfig::FileIOException'
   what():  FileIOException
 /var/spool/slurmd/job49425086/slurm_script: line 14:  5584 Aborted                 (core dumped) ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
 ```
 
-### Changes to deal with CUDA issue
+### CUDA Setup
+Use `nvcc --version` to check the availability of GPU. If GPU is available, the printout would be something like
+```
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Sun_Sep__4_22:14:01_CDT_2016
+Cuda compilation tools, release 8.0, V8.0.44
+```
 
+Indicate a specific version of CUDA in `MaCh3/setup.sh`(version greater than 7.0 is okay). For example:
+```
+moudle load cuda/8.0.44
+```
+
+To use CPU instead of GPU, comment off the line in `MaCh3/setup.sh`
+```
+export CUDAPATH=${CUDA_HOME}
+```
+
+A version of gcc might be related with using CUDA, try using version 5.4 by `module load gcc/5.4.0`
 
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
