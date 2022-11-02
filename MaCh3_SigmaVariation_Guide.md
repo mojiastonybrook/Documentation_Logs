@@ -9,7 +9,7 @@ Running SigmaVariation needs Monte Carlo samples(mtuple), spline files(weights),
 - Cfg
 
 An exampl of running SigmaVariation on ComputeCanada is shown here.
-
+### Mtuple and Spline
 The default sk atm muple files and corresponding spline files on Cedar of ComputeCanada are stored in 
 ```
 ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_skatm/SKMtuples_Sept052022
@@ -28,12 +28,19 @@ ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam/
 ${PROJECT}/rpp-blairt2k/jiangcc/storage_pub/MaCh3_storage/m3_input_mcmc_t2kbeam_spline/T2KSplines_Sept052022
 ```
 Link the two directories as `SK_19b_13av7_fitqun20` and `SK_19b_13av7_splines20` directories in `input`.
+### Covariance matrix
+The default covariance matrix file is stored as `inputs/xsec_covariance_2020a_IncAtmosphericModel_v9_NoBeamSIPN.root`. It is generated from a .xml file `nd280_utils/xsecMatrixMaker/xsec_covariance_2020a_IncAtmosphericModel_v9_NoBeamSIPN.xml`.
 
+The covariance matrix file is forwarded to the program by configuration file as below.
+
+### Cfg
 Set up the configuration of sigmaVariation. Change the content in the cfg file `configs/AtmosphericConfigs/AtmConfig.cfg` according to the need.
 - `OUTPUTNAME` 
 - `OSCPARAM` Oscillation parameter sets, `Asimov A` or `UnOsc`. Use `UnOsc`.
 - `ATMPDFS` atm samples 
+- `GENTUNEFILE` covariance matrix file
 
+### Source code modification
 Some setting in the source code of sigmaVariation also might need change accordingly. In `AtmJointFit_Src/AtmSigmaVar.cpp` with the following setup
 ```
   bool useT2K = false;
@@ -54,7 +61,7 @@ source setup.sh
 make clean
 make
 ```
-
+### Job script
 Prepare a remote job script for convenience, here is an example script:
 ```
 #!/bin/bash                                                                                                                                                            
@@ -152,3 +159,6 @@ The meaning of the parameters and the determination of the values are listed as 
 - sk_model
 
 Once the additional dial has been declared in this `.xml` file, the covariance matrix file could be generated from xml by running a python script: https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit/nd280_utils/xsecMatrixMaker/makeXSecMatrix.py
+```
+./makeXSecMatrix.py input.xml output.root
+```
