@@ -114,9 +114,13 @@ The structure is
 - root file
   - xsec_id
     - sample
-      - Sigma
+      - Sigma: weighted distribution with uncertainty varied by 1 or 3 sigmas
+        - 1: reconstructed momentum
+        - 2: rec cosine zenith  
       - Nominal
       - Ratio    
+
+The `AdlerAngle` result is stored as `xsec_53` defaultly.
 
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
