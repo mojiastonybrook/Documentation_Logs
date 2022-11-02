@@ -106,6 +106,18 @@ export CUDAPATH=${CUDA_HOME}
 
 A version of gcc might be related with using CUDA, try using version 5.4 by `module load gcc/5.4.0`
 
+### Results from SigmaVariation
+
+The plots from running SigmaVariation has been stored in the root file declared as the `OUTPUTNAME` in cfg. 
+
+The structure is
+- root file
+  - xsec_id
+    - sample
+      - Sigma
+      - Nominal
+      - Ratio    
+
 ## Implementing Spline from An Additional Dial
 The spline file storing the weights from the additional dial `Matrix_Element_Ro` has been produced by `XsecResponse` and `OAGenWeightsApps`.
 
