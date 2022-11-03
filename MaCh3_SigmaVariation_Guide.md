@@ -50,7 +50,7 @@ Some setting in the source code of sigmaVariation also might need change accordi
   bool useAtmSKDet = false;
   bool useBeamSKDet = false;
   bool useSKDetBeam = false;
-  bool useATMPDDet = false;         // true
+  bool useATMPDDet = false;        // true
   bool useXsec = true;
   bool skipFlux = true;
 ```
@@ -160,5 +160,9 @@ The meaning of the parameters and the determination of the values are listed as 
 
 Once the additional dial has been declared in this `.xml` file, the covariance matrix file could be generated from xml by running a python script: https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit/nd280_utils/xsecMatrixMaker/makeXSecMatrix.py
 ```
-./makeXSecMatrix.py input.xml output.root
+python makeXSecMatrix.py input.xml output.root
+```
+If need to build such a covariance matrix file from .xml, it is better to exit the shell and start a new one, loading the pre-installed ROOT on ComputeCanada to aviod confusing the environment with different builds of root libs. 
+```
+moudle load root/5.34.36
 ```
