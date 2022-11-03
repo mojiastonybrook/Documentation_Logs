@@ -40,6 +40,17 @@ Set up the configuration of sigmaVariation. Change the content in the cfg file `
 - `ATMPDFS` atm samples 
 - `GENTUNEFILE` covariance matrix file
 
+Generate specific cfg file for each atm sample before running SigmaVariation. Check the contents in `configs/AtmosphericConfigs/`, if there are no such cfg files like `AtmSample_X.cfg`, then run the command to generate them:
+```
+python makeConfigs.py
+```
+Related error when running SigmaVariation might be like if such configuration files do not exist:
+```
+terminate called after throwing an instance of 'libconfig::FileIOException'
+  what():  FileIOException
+/var/spool/slurmd/job49425086/slurm_script: line 14:  5584 Aborted                 (core dumped) ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
+```
+
 ### Source code modification
 Some setting in the source code of sigmaVariation also might need change accordingly. In `AtmJointFit_Src/AtmSigmaVar.cpp` with the following setup
 ```
@@ -80,18 +91,6 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
 ```
 
-### Notes
-Generate specific cfg file for each atm sample before running SigmaVariation. Check the contents in `configs/AtmosphericConfigs/`, if there are no such cfg files like `AtmSample_X.cfg`, then run the command to generate them:
-```
-python makeConfigs.py
-```
-Related error when running SigmaVariation might be like if such configuration files do not exist:
-```
-terminate called after throwing an instance of 'libconfig::FileIOException'
-  what():  FileIOException
-/var/spool/slurmd/job49425086/slurm_script: line 14:  5584 Aborted                 (core dumped) ./AtmJointFit_Bin/AtmSigmaVar configs/AtmosphericConfigs/AtmConfig.cfg
-```
-
 ### CUDA Setup
 Use `nvcc --version` to check the availability of GPU. If GPU is available, the printout would be something like
 ```
@@ -113,6 +112,10 @@ export CUDAPATH=${CUDA_HOME}
 
 A version of gcc might be related with using CUDA, try using version 5.4 by `module load gcc/5.4.0`
 
+CUDA related error might be like:
+```
+CUDA error: CUDA driver version is insufficient for CUDA runtime version : ../CUDAProb3/cudapropagator.cuh, line 54
+```
 ### Results from SigmaVariation
 
 The plots from running SigmaVariation has been stored in the root file declared as the `OUTPUTNAME` in cfg. 
