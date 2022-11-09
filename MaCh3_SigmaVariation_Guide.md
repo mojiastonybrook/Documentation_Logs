@@ -38,7 +38,7 @@ Set up the configuration of sigmaVariation. Change the content in the cfg file `
 - `OUTPUTNAME` 
 - `OSCPARAM` Oscillation parameter sets, `Asimov A` or `UnOsc`. Use `UnOsc`.
 - `ATMPDFS` atm samples 
-- `GENTUNEFILE` covariance matrix file
+- `XSECCOVFILE` covariance matrix file
 
 Generate specific cfg file for each atm sample before running SigmaVariation. Check the contents in `configs/AtmosphericConfigs/`, if there are no such cfg files like `AtmSample_X.cfg`, then run the command to generate them:
 ```
