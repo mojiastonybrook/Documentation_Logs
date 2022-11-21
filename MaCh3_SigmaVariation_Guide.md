@@ -155,11 +155,15 @@ The meaning of the parameters and the determination of the values are listed as 
 - renorm
 - type
 - splineind
+  > index number to label the systematic; used to check the type of the systematic (spline,norm or func)
 - detid
+  > compared with sample id (from sample config files) bit-wisely to check whether the corresponding systematic will be applied to certain sample(s)
 - sk_spline_name
 - nd_spline_name
+  > dummy varaiable for this study
 - stepscale
 - sk_model
+  > mach3 modes: https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit/samplePDF/Structs.h#L1381
 
 Once the additional dial has been declared in this `.xml` file, the covariance matrix file could be generated from xml by running a python script: https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit/nd280_utils/xsecMatrixMaker/makeXSecMatrix.py
 ```
