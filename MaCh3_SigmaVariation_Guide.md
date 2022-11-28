@@ -174,4 +174,9 @@ If need to build such a covariance matrix file from .xml, it is better to exit t
 moudle load root/5.34.36
 ```
 -------------------------------------------------
-In `XsecResponse`
+In `XsecResponse` the systematics we would like splines to be produced are specified by the `SystematicProperties2D`. Constructor requires 4 inputs, with an optional 5th. In order:
+- Name of systematic, formatted in correspondes with the input weight file tree name for that systematic, with "_tree" removed
+- A short name for this systematic that will be featured in the name of output splines and graphs, along mode and bin information
+- List of interaction modes affected by this parameter, built above
+- The position of the nominal knot within the arrays contained in the supplied weight file
+- [optional] Should extra knots be made to extend the range of systematic values in the splines, creating flat(ish) edges? (boolean)
