@@ -181,5 +181,5 @@ In `XsecResponse` the systematics we would like splines to be produced are speci
 - The position of the nominal knot within the arrays contained in the supplied weight file
 - [optional] Should extra knots be made to extend the range of systematic values in the splines, creating flat(ish) edges? (boolean)
 
-The spline from the dial with the extended range should be asigned with a different output name.
+The spline from the dial with the extended range should be asigned with a different output name. The name will be forwarded to MaCh3 to specify which spline to use. Modifications should be made in `.xml` file then generate new covariance matrix root files.
 
