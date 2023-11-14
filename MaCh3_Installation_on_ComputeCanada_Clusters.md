@@ -30,7 +30,7 @@ export CUDAPATH=${CUDA_HOME}
       git clone https://TOKEN@github.com/t2k-software/MaCh3.git
       ```
        ### note
-           To setup a personal token on Github follow the link [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+      To setup a personal token on Github follow the link [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
    
     - If use ssh key to access the github account, follow the instruction to generate a ssh key and add it to your github account
       [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
@@ -46,40 +46,37 @@ export CUDAPATH=${CUDA_HOME}
 A password to IRODS might be needed and for that go to the T2K website: ` https://t2k.org/asg/oagroup/gadatastorage/index_html`, look for the section of ***iRODS web interface***. 
 But the server of iRODS might be problematic for now, so expect downloading nothing from the running the command.
 
-6. change the content in the `setup_niwgreweight.sh` file to the following to make sure of the access to github when using personal token:
+5. If **niwgreweight** is not installed successfully in the previous step, then it could be solo compiled by running ` source setup_niwgreweight.sh`.
+   - change the content in the `setup_niwgreweight.sh` file to the following to make sure of the access to github when using personal token:
     ```
     git clone https://TOKEN@github.com/t2k-software/NIWGReWeight.git
     ```
-    
-    then `source setup_niwgreweight.sh`
+6. Install **CUDAProbs3** by `source setup_CUDAProb3.sh`
+   - change the content in the `setup_CUDAProb.sh` to make sure of the access to github if using personal token:
+     ```
+     git clone https://TOKEN@github.com:/dbarrow257/CUDAProb3
+     ```
 
-7. change the content in the `setup_CUDAProb.sh` to make sure of the access to github if using personal token:
-    ```
-    git clone https://TOKEN@github.com:/dbarrow257/CUDAProb3
-    ```
-    
-    then `source setup_CUDAProb3.sh`
+7. Install **psyche** by `source setup_psyche.sh`
 
-8. `source setup_psyche.sh`
-
-9. T2KSKTool. 
+8. Install **T2KSKTool**. 
  
-    This package is remotely stored on GitLab. First check the ability to get to gitlab https://git.t2k.org/users/sign_in and follow the instructions to add public key of the cluster to your personal account on gitlab.
+    - This package is remotely stored on GitLab. First check the ability to get to gitlab https://git.t2k.org/users/sign_in and follow the instructions to add public key of the cluster to your personal account on gitlab.
+      ### note
+      How to set up the public key for GitLab:
+      - in home directory run `ssh-keygen -t ed25519`. Enter the directory and name you want the key file to be saved with. Enter a phrase.
+      - if the key file is not stored with the default directory or name, the following steps should be taken to make the key workable:
+        - `eval $(ssh-agent -s)` 
+        - `ssh-add <directory to private SSH key>` For example `ssh-add /home/mojia/.ssh/id_ed25519_t2kGitLab`. Enter the passphrase if asked
+        - create a config file under `.ssh` directory. For example `vim .ssh/config`. In the configuration file write:
+          ```
+          Host git.t2k.org
+            PreferredAuthentications publickey
+            IdentityFile ~/.ssh/id_ed25519_t2kGitLab
+          ```  
+      - Paste the public key to the GitLab account. Look for file ended with `.pub`. On GitLab, select the avatar, then ***Preference*** and then on the left side bar ***SSH Keys***
 
-    then `source setup_t2ksktool.sh`
-    ### note
-    How to set up the public key for GitLab:
-    - in home directory run `ssh-keygen -t ed25519`. Enter the directory and name you want the key file to be saved with. Enter a phrase.
-    - if the key file is not stored with the default directory or name, the following steps should be taken to make the key workable:
-      - `eval $(ssh-agent -s)` 
-      - `ssh-add <directory to private SSH key>` For example `ssh-add /home/mojia/.ssh/id_ed25519_t2kGitLab`. Enter the passphrase if asked
-      - create a config file under `.ssh` directory. For example `vim .ssh/config`. In the configuration file write:
-        ```
-        Host git.t2k.org
-          PreferredAuthentications publickey
-          IdentityFile ~/.ssh/id_ed25519_t2kGitLab.pub
-        ```  
-    - Paste the public key to the GitLab account. Look for file ended with `.pub`. On GitLab, select the avatar, then ***Preference*** and then on the left side bar ***SSH Keys***
+    - then `source setup_t2ksktool.sh`
     
 10. `source setup.sh`
 
