@@ -86,7 +86,7 @@ But the server of iRODS might be problematic for now, so expect downloading noth
    - Check the contents in the shell script and correct the formats before sourcing.
    - Change the command `module load cuda` to `module load cuda/8.0.44` 
 
-11. Compile the MaCh3 executables by  
+10. Compile the MaCh3 executables by  
     ```
     make clean
     make
