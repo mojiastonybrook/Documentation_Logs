@@ -3,7 +3,7 @@
 This documentation describes the pre-fitting validations performed by the version of MaCh3 being used in the T2K-SK joint analysis in 2023. The examples are processed on the ComputeCanada cluster Cedar, including running the executables of `PrintEventRate`, `AtmSigmaVar` and `SystLLHScan`.
 
 ## Print Event Rate
-The event rates of the samples covered by the joint fit are recorded in the tech-note [TN471]{http://t2k.org/docs/technotes/471/JointFitFitterValidv1.2}'s table 2 and table 3.
+The event rates of the samples covered by the joint fit are recorded in the tech-note (TN471)[http://t2k.org/docs/technotes/471/JointFitFitterValidv1.2]'s table 2 and table 3.
 
 To reprodce the results, run the executable `PrintEventRate` in MaCh3's `AtmJointFit_Bin/` with a configuration card in MaCh3's `configs/AtmosphericConfigs/`. 
 A job script for example:
