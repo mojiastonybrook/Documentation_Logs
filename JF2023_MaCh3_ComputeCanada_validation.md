@@ -27,7 +27,7 @@ source setup.sh
 export OMP_NUM_THREADS=8
 ./AtmJointFit_Bin/PrintEventRate configs/AtmosphericConfigs/AtmConfig_PrintEventRate_Banff.cfg
 ```
-There are two general configurations for event rate printing.
+There are two general configurations for event rate printing. The setups are defined in a `cfg` card with the default one stored as `configs/AtmosphericConfigs/AtmConfig.cfg` in the local installation directory of MaCh3. 
 ### BANFF tuning
 config
 ### Generated tuning
