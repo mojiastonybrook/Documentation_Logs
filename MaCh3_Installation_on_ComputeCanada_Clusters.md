@@ -35,7 +35,7 @@ export CUDAPATH=${CUDA_HOME}
     - If use ssh key to access the github account, follow the instruction to generate a ssh key and add it to your github account
       [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
    
-3. change the directory into the MaCh3 directory and check out `DBarrow_JointFit_CorrelatedFDDetSysts_MinorUpdates` branch
+3. change the directory into the MaCh3 directory and check out `DBarrow_JointFit` branch
 
 4. `source SetMeUp.sh`
 
