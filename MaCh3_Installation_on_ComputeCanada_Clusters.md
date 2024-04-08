@@ -84,8 +84,8 @@ But the server of iRODS might be problematic for now, so expect downloading noth
           ```  
       - Paste the public key to the GitLab account. Look for file ended with `.pub`. On GitLab, select the avatar, then ***Preference*** and then on the left side bar ***SSH Keys***
 
-    - Run installation by `source setup_T2KSKTool.sh`. If on computeCanada clusters, the installation of **t2ksk-common** and **t2ksk-detcovmat** packages need to be fixed by the following extra procedures
-      - for **t2ksk-common**, follow the commands in `setup_T2KSKTool.sh` to download the package and checkout the right version.
+    - Run installation by `source setup_T2KSKTools.sh`. If on computeCanada clusters, the installation of **t2ksk-common** and **t2ksk-detcovmat** packages need to be fixed by the following extra procedures
+      - for **t2ksk-common**, follow the commands in `setup_T2KSKTools.sh` to download the package and checkout the right version.
       - In `CMakeLists.txt`, change the line `list(APPEND CMAKE_MODULE_PATH $ENV{ROOTSYS}/etc/cmake)` to `list(APPEND CMAKE_MODULE_PATH $ENV{ROOTSYS}/etc/root/cmake)`
       - then follow the commands in `setup_T2KSKTool.sh` to generate the compiling script and compile the package
       - for **t2ksk-detcovmat**, do similar change in its `CMakeLists.txt` and then compile after successfully implementing **t2ksk-common** and **eign** packages
