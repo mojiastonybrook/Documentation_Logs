@@ -99,6 +99,9 @@ But the server of iRODS might be problematic for now, so expect downloading noth
     make clean
     make
     ```
+## Prerequisites inputs for MaCh3
+Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3. 
+### MaCh3 
 
 ## Note
 `source setup.sh` whenever want to run executables
