@@ -100,8 +100,31 @@ But the server of iRODS might be problematic for now, so expect downloading noth
     make
     ```
 ## Prerequisites inputs for MaCh3
-Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3. 
-### MaCh3 
+Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3, otherwise errors would appear during the executable running.
+
+### Configuration cards for separate SK atmospheric samples
+In the **MaCh3** subdirectory `configs/AtmosphericConfigs/`, check if there are `.cfg` files with names such as `AtmSample_X.cfg` where **X** represents the figure from 1 to 19, referring the total 19 samples in the SK atmospheric neutrino. If not, then in that directory run the command:
+```
+python2 makeConfigs.py
+```
+to generate these configuration cards from templates.
+
+### SK atmospheric MCs and Splines
+The root files containing the SK atm MCs and splines are provided to **MaCh3** in directories with hard-coded names as `MaCh3/inputs/skatm/SKMC` and `MaCh3/inputs/skatm/SKMCSplines`. If they are not existing, link the public files with the names shown by:
+```
+cd MaCh3/inputs/skatm
+ln -s /project/6008045/skt2kjoint/MaCh3_storage_pub/m3_input_mc_skatm_spline SKMCSplines
+ln -s /project/6008045/skt2kjoint/MaCh3_storage_pub/m3_input_mc_skatm SKMC
+```
+
+### T2K beam MCs and Splines
+Similar as the SK atm samples, the MCs and splines for t2k beam samples are supposed to be contained in the directories `MaCh3/inputs/SK_19b_13av7_fitqun20` and `MaCh3/inputs/SK_19b_13av7_splines20`. If not existing, then:
+```
+cd MaCh3/inputs
+ln -s /project/6008045/skt2kjoint/MaCh3_storage_pub/m3_input_mc_t2kbeam_spline SK_19b_13av7_splines20
+ln -s /project/6008045/skt2kjoint/MaCh3_storage_pub/m3_input_mc_t2kbeam SK_19b_13av7_fitqun20 
+```
+
 
 ## Note
 `source setup.sh` whenever want to run executables
