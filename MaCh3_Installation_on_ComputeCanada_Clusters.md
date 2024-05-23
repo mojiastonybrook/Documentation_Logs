@@ -29,8 +29,8 @@ export CUDAPATH=${CUDA_HOME}
       ```
       git clone https://TOKEN@github.com/t2k-software/MaCh3.git
       ```
+      
        ### note
-
        To setup a personal token on Github follow the link [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
    
     -2.2.1 If use ssh key to access the github account, follow the instruction to generate a ssh key and add it to your github account
