@@ -30,10 +30,12 @@ export CUDAPATH=${CUDA_HOME}
       git clone https://TOKEN@github.com/t2k-software/MaCh3.git
       ```
        ### note
-      To setup a personal token on Github follow the link [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+       To setup a personal token on Github follow the link [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
    
     -2.2.1 If use ssh key to access the github account, follow the instruction to generate a ssh key and add it to your github account
       [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
+
     -2.2.2 After setting up the ssh key, use the command below to download MaCh3 from its github repository
       ```
       git clone git@github.com:t2k-software/MaCh3.git
