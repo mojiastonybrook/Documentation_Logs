@@ -25,25 +25,25 @@ export CUDAPATH=${CUDA_HOME}
 ```
 
 2. Set up the directory where you want to install MaCh3 and download the MaCh3 package from github/t2ksoftware.
-    -2.1 If use personal access token of github, the following line servers as an example command to get to github
+   
+    - 2.1 If use personal access token of github, the following line servers as an example command to get to github
       ```
       git clone https://TOKEN@github.com/t2k-software/MaCh3.git
-      ```
-      
+      ``` 
        ### note
        To setup a personal token on Github follow the link [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
    
-    -2.2.1 If use ssh key to access the github account, follow the instruction to generate a ssh key and add it to your github account
+    - 2.2.1 If use ssh key to access the github account, follow the instruction to generate a ssh key and add it to your github account
       [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux)
 
-    -2.2.2 After setting up the ssh key, use the command below to download MaCh3 from its github repository
+    - 2.2.2 After setting up the ssh key, use the command below to download MaCh3 from its github repository
       ```
       git clone git@github.com:t2k-software/MaCh3.git
       ```
    
-4. change the directory into the MaCh3 directory and check out `DBarrow_JointFit` branch
+3. change the directory into the MaCh3 directory and check out `DBarrow_JointFit` branch
 
-5. `source SetMeUp.sh`
+4. `source SetMeUp.sh`
 
     if ask whether to install root, answer: no;
     
@@ -54,26 +54,26 @@ export CUDAPATH=${CUDA_HOME}
 A password to IRODS might be needed and for that go to the T2K website: ` https://t2k.org/asg/oagroup/gadatastorage/index_html`, look for the section of ***iRODS web interface***. 
 But the server of iRODS might be problematic for now, so expect downloading nothing from the running the command.
 
-6. **irods** has been used to download near detector data and MC but not anymore. To prepare the ND280 files, link the existing files on Cedar to the directory where the subdirecory **MaCh3** is by   
+5. **irods** has been used to download near detector data and MC but not anymore. To prepare the ND280 files, link the existing files on Cedar to the directory where the subdirecory **MaCh3** is by   
    ```
    ln -s /project/6008045/skt2kjoint/MaCh3_storage_pub/ND280_DataMC_OA2020/P6Data P6Data
    ln -s /project/6008045/skt2kjoint/MaCh3_storage_pub/ND280_DataMC_OA2020/P6MC P6MC
    ```
 
-7. If **niwgreweight** is not installed successfully in Step 4, then it could be solo compiled by running ` source setup_niwgreweight.sh`.
+6. If **niwgreweight** is not installed successfully in Step 4, then it could be solo compiled by running ` source setup_niwgreweight.sh`.
    - change the content in the `setup_niwgreweight.sh` file to the following to make sure of the access to github when using personal token:
     ```
     git clone https://TOKEN@github.com/t2k-software/NIWGReWeight.git
     ```
-8. Install **CUDAProbs3** by `source setup_CUDAProb3.sh`
+7. Install **CUDAProbs3** by `source setup_CUDAProb3.sh`
    - change the content in the `setup_CUDAProb.sh` to make sure of the access to github if using personal token:
      ```
      git clone https://TOKEN@github.com:/dbarrow257/CUDAProb3
      ```
 
-9. Install **psyche** by `source setup_psyche.sh`
+8. Install **psyche** by `source setup_psyche.sh`
 
-10. Install **T2KSKTool**. 
+9. Install **T2KSKTool**. 
  
     - This package is remotely stored on GitLab. First check the ability to get to gitlab https://git.t2k.org/users/sign_in and follow the instructions to add public key of the cluster to your personal account on gitlab.
       ### note
@@ -96,7 +96,7 @@ But the server of iRODS might be problematic for now, so expect downloading noth
       - then follow the commands in `setup_T2KSKTool.sh` to generate the compiling script and compile the package
       - for **t2ksk-detcovmat**, do similar change in its `CMakeLists.txt` and then compile after successfully implementing **t2ksk-common** and **eign** packages
     
-11. Setup MaCh3 computing environments by `source setup.sh`.
+10. Setup MaCh3 computing environments by `source setup.sh`.
    - Check the contents in the shell script and correct the formats before sourcing.
    - Change the command `module load cuda` to `module load cuda/8.0.44` 
 
