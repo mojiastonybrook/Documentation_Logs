@@ -1,4 +1,5 @@
 # How to Install MaCh3 on ComputeCanada's Clusters
+This documentation mainly works well on the Cedar cluster of the ComputeCanada platform. 
 ## Application for a ComputeCanda Account
  1. Go to ComputeCanda's website ` https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account`for application and fellow the instruction there.
  Choose “External Collaborator” for “Position”.
