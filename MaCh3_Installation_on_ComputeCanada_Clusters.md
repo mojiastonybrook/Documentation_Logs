@@ -11,7 +11,7 @@ This documentation mainly works well on the Cedar cluster of the ComputeCanada p
  ssh -Y username@clustername.computecanada.ca
  ```
 ## Install MaCh3
-1. Prepare a bashrc script `setup.sh` to set up the computing environments on the cluster. An example for the contents in the script:
+1. Prepare a bashrc script `setup.sh` to set up the computing environments on the cluster. **Cedar** An example for the contents in the script:
 ```
 #!/bin/bash
 
@@ -22,6 +22,15 @@ module load gsl/1.16
 module load root/5.34.36
 
 module load cuda/8.0.44
+export CUDAPATH=${CUDA_HOME}
+```
+
+   On **Beluga** the environments should be :
+```
+module load nixpkgs/16.09
+module load gcc/4.8.5
+module load gsl/1.16
+module load cuda/7.5.18
 export CUDAPATH=${CUDA_HOME}
 ```
 
