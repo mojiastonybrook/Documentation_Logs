@@ -68,6 +68,8 @@ But the server of iRODS might be problematic for now, so expect downloading noth
     ```
     git clone https://TOKEN@github.com/t2k-software/NIWGReWeight.git
     ```
+   - On **Beluga**: installation might fail because there is no path to root; try reload the `root/5.34.36` module  
+      
 8. Install **CUDAProbs3** by `source setup_CUDAProb3.sh`
    - change the content in the `setup_CUDAProb.sh` to make sure of the access to github if using personal token:
      ```
