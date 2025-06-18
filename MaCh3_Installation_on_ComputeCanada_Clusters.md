@@ -50,7 +50,7 @@ export CUDAPATH=${CUDA_HOME}
     
     if ask whether to Install **cmt**, **irods**, and **niwgreweight**, answer: yes;
 
-    if ask whether to Build CMAKE binar, answer: no
+    if ask whether to Build CMAKE binary, answer: no
 
     IRODS settings:
     answer "no" to the first few questions until seeing the question "save configuration? ". Answer yes to that question and start the build;
