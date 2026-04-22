@@ -1,4 +1,4 @@
-#Notes on Adaptive Step Size Tuning for T2K-SK Joint Asimov Fit with Shifting and Smearing Detector Uncertainties 
+# Notes on Adaptive Step Size Tuning for T2K-SK Joint Asimov Fit with Shifting and Smearing Detector Uncertainties 
 This documentation mainly works well on the Cedar cluster of the ComputeCanada platform. 
 ## Application for a ComputeCanda Account
  1. Go to ComputeCanda's website ` https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account`for application and fellow the instruction there.
