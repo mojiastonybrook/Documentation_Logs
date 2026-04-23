@@ -1,5 +1,5 @@
 # Notes on Adaptive Step Size Tuning for T2K-SK Joint Asimov Fit with Shifting and Smearing Detector Uncertainties 
-This documentation mainly works well on the Cedar cluster of the ComputeCanada platform. 
+The joint analysis of T2K and SK experiments could possibly utilize a common set of detector uncertainty systematics for the samples that cover similar neutrino energy spectrum and have similar event selection cuts, which consists of parameters linearly distorting, i.e. shifting and smearing, the corresponding event selection variables. These common shifting and smearing parameters form an optional detector uncertainty model together with T2K-sample-specific and SK-sample-specific detector uncertainties. The introduction of the optional model to the joint analysis would cause  
 ## Application for a ComputeCanda Account
  1. Go to ComputeCanda's website ` https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account`for application and fellow the instruction there.
  Choose “External Collaborator” for “Position”.
