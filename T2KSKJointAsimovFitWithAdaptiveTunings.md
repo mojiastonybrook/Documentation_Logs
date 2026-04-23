@@ -14,8 +14,17 @@ This scheme is realized in the MaCh3 version specified for the T2K-SK joint anal
 ## Adapation-on Phase
 
 ### Stage 1
+[https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L376](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L376):
+```
+    adaptive_setting = {'lower_adapt':1000, 'upper_adapt':100000,'update_interval':100}
+```
 
 ### Stage 2
+[https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
+```
+    adaptive_setting = {'lower_adapt':10000, 'upper_adapt':200000,'update_interval':1000}
+```
+
 1. Prepare a bashrc script `setup.sh` to set up the computing environments on the cluster. **Cedar** An example for the contents in the script:
 ```
 #!/bin/bash
