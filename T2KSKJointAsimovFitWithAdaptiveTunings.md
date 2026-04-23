@@ -9,14 +9,9 @@ The chain at its first two stages is in the phase of enabling auto-adaptive step
 
 At the third stage, the chain moves into a different phase where the auto-adaption is fully turned off. The chains start at where they are stopped at the previous stage; the adapted covariance matrix in the proposal functions are frozen at fixed values during the whole execution of this stage.
 
- 1. Go to ComputeCanda's website ` https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account`for application and fellow the instruction there.
- Choose “External Collaborator” for “Position”.
+This scheme is realized in the MaCh3 version specified for the T2K-SK joint analysis with shifting and smearing detector uncertainty model [https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst). A corresponding job batch submitter is also prepared for massive production of MCMC chains: [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC). 
 
- 2. A sponsor is needed for the confirmation of the application and his/her CCRI code is required during the application. The current sponsor is Blair Jamieson, bl.jamieson@uwinnipeg.ca, CCRI : `imn-664-02`
-
- 3. Once getting the account, use ssh to connect to the clusters
- ```
- ssh -Y username@clustername.computecanada.ca
+## Adapation-on Phase
  ```
 ## Install MaCh3
 1. Prepare a bashrc script `setup.sh` to set up the computing environments on the cluster. **Cedar** An example for the contents in the script:
