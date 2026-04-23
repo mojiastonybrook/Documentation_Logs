@@ -3,7 +3,12 @@ The joint analysis of T2K and SK experiments could possibly utilize a common set
 ## General scheme for invloving auto-adapation feature in MCMC
 <img width="408" height="273" alt="image" src="https://github.com/user-attachments/assets/ed1cd6db-8aac-4aa6-b36e-681928ef8a40" />
 
-As the example in the above diagram illustrates, the process of producing a single MCMC chain could be broken into three-stages, with the feature of auto-adaptive step size tuning enabled for additional parameters in the optional model.  
+As the example in the above diagram illustrates, the process of producing a single MCMC chain could be broken into three-stages, with the feature of auto-adaptive step size tuning enabled for additional parameters in the optional model. 
+
+The chain at its first two stages is in the phase of enabling auto-adaptive step size tuning. Generally in this phase, the chains start with their initial setting and run with adaptions on their proposal functions via continuing to update the covariance matrix of the parameters every a few thousands steps according to the accumulated samples. This phase will last until the chains reach or get close to their equilibrium states and the last updated covariance matrix are kept for the third stage.
+
+At the third stage, the chain moves into a different phase where the auto-adaption is fully turned off. The chains start at where they are stopped at the previous stage; the adapted covariance matrix in the proposal functions are frozen at fixed values during the whole execution of this stage.
+
  1. Go to ComputeCanda's website ` https://alliancecan.ca/en/services/advanced-research-computing/account-management/apply-account`for application and fellow the instruction there.
  Choose “External Collaborator” for “Position”.
 
