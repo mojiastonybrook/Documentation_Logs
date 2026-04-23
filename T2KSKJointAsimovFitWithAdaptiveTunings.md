@@ -13,7 +13,9 @@ This scheme is realized in the MaCh3 version specified for the T2K-SK joint anal
 
 ## Adapation-on Phase
 
-## Install MaCh3
+### Stage 1
+
+### Stage 2
 1. Prepare a bashrc script `setup.sh` to set up the computing environments on the cluster. **Cedar** An example for the contents in the script:
 ```
 #!/bin/bash
@@ -122,10 +124,10 @@ But the server of iRODS might be problematic for now, so expect downloading noth
     make clean
     make
     ```
-## Prerequisites inputs for MaCh3
+## Adaption-off Phase
 Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3, otherwise errors would appear during the executable running.
 
-### Configuration cards for separate SK atmospheric samples
+### Stage 3
 In the **MaCh3** subdirectory `configs/AtmosphericConfigs/`, check if there are `.cfg` files with names such as `AtmSample_X.cfg` where **X** represents the figure from 1 to 19, referring the total 19 samples in the SK atmospheric neutrino. If not, then in that directory run the command:
 ```
 python2 makeConfigs.py
