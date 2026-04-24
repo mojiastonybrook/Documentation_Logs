@@ -41,6 +41,11 @@ The `ADAPTIVEFILENAME` for each group indicates where the adapted covariance mat
 
 If `USEADAPTIVE` is set to `false` then the group will use the default step-size setting in MCMC. In that mode there is no adapation at all in the whole process. 
 
+All the parameters with auto-adapation on step sizes are formally treated as entries of one "global matrix"
+```
+USEGLOBALMATRIXSIZE = true
+GLOBALMATRIXSIZE = 263 
+```
 ## Adapation-on Phase
 
 ### Stage 1
