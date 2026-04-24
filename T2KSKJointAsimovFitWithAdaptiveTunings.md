@@ -41,7 +41,7 @@ The `ADAPTIVEFILENAME` for each group indicates where the adapted covariance mat
 
 If `USEADAPTIVE` is set to `false` then the group will use the default step-size setting in MCMC. In that mode there is no adapation at all in the whole process. 
 
-According to adpative MH algorithm, there should be a modfication to the step size scaling factor for each group, which is related to the size of that group. All the parameters with auto-adapation on step sizes are formally treated as entries of one "global matrix"; in this case, each group forms a sub-block in that global matrix, uncorrelated to the other blocks. The following commands   
+According to adpative MH algorithm, there should be a modfication to the step size scaling factor for each group, which is related to the size of that group. All the parameters with auto-adapation on step sizes are formally treated as entries of one "global matrix"; in this case, each group forms a sub-block in that global matrix, uncorrelated to the other blocks. The following commands indicate that the step size scaling factors respective for the above groups are modfied by the size of the same global matrix and the size is `263` as `224 (atmskdet) + 21 (skcalib) + 18 (skdetbeam)`.  
 ```
 USEGLOBALMATRIXSIZE = true
 GLOBALMATRIXSIZE = 263 
