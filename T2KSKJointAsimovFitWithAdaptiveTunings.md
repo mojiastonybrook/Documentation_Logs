@@ -37,6 +37,9 @@ ADAPTIVEMATRIXNAMESKDETBEAM = "skdetbeam_covariance"
 ADAPTIVEMEANNAMESKDETBEAM = "skdetbeam_means"
 ADAPTIVEBLOCKSSKDETBEAM = []
 ```
+The `ADAPTIVEFILENAME` for each group indicates where the adapted covariance matrices are saved as root files; the `ADAPTIVEMATRIXNAME` and `ADAPTIVEMEANNAME` are the names of the covariance matrix and the mean values of the parameters stored in that root file.
+
+If `USEADAPTIVE` is set to `false` then the group will use the default step-size setting in MCMC. In that mode there is no adapation at all in the whole process. 
 
 ## Adapation-on Phase
 
