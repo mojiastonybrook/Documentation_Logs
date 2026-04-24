@@ -11,6 +11,33 @@ At the third stage, the chain moves into a different phase where the auto-adapti
 
 This scheme is realized in the MaCh3 version specified for the T2K-SK joint analysis with shifting and smearing detector uncertainty model [https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst). A corresponding job batch submitter is also prepared for massive production of MCMC chains: [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC). 
 
+### Auto-adapation configuration
+A template of the configuration card for executing T2K-SK joint Asimov fit in MaCh3 is [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/main/AtmConfig_adaptiveMC_temp_GlobalSize.cfg](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/main/AtmConfig_adaptiveMC_temp_GlobalSize.cfg).
+
+The auto-adapation on step sizes are on for `AtmSKDet` (shifting and smearing parameters), `SKCalibration` (supplementary SK-sample-specified uncertainties) and `SKDetBeam` (supplementary T2K-sample-specified uncertainties) with the following commands in the card:
+```
+// AtmSKDet
+USEADAPTIVEATMSKDET = true
+ADAPTIVEFILENAMEATMSKDET = ""
+ADAPTIVEMATRIXNAMEATMSKDET = "AtmSKDet_covariance"
+ADAPTIVEMEANNAMEATMSKDET = "AtmSKDet_means"
+ADAPTIVEBLOCKSATMSKDET = []        // no blocking for now
+
+// SKCalibration
+USEADAPTIVESKCALIB = true
+ADAPTIVEFILENAMESKCALIB = ""
+ADAPTIVEMATRIXNAMESKCALIB = "skcalib_covariance"
+ADAPTIVEMEANNAMESKCALIB = "skcalib_means"
+ADAPTIVEBLOCKSSKCALIB = []
+
+//SKDetBeam
+USEADAPTIVESKDETBEAM = true
+ADAPTIVEFILENAMESKDETBEAM = ""
+ADAPTIVEMATRIXNAMESKDETBEAM = "skdetbeam_covariance"
+ADAPTIVEMEANNAMESKDETBEAM = "skdetbeam_means"
+ADAPTIVEBLOCKSSKDETBEAM = []
+```
+
 ## Adapation-on Phase
 
 ### Stage 1
