@@ -49,7 +49,9 @@ GLOBALMATRIXSIZE = 263
 
 
 ## Adapation-on Phase
+As introduced above, the adapation on step sizes is turned on for the additional detector uncertainty parameters, i.e. the covaraince matrix used in the proposal function would be constantly updated every a few hundreds or thousands of steps according to the sampled points in the prameter space during that interval. 
 
+In practice, as shown in the scheme diagram, this phase is broken into two stages with different adapation settings.
 ### Stage 1
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L376](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L376):
 ```
