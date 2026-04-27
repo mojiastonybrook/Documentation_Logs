@@ -53,6 +53,7 @@ As introduced above, the adapation on step sizes is turned on for the additional
 
 In practice, as shown in the scheme diagram, this phase is broken into two stages with different adapation settings.
 ### Stage 1
+The chain starts with initial setting; the adapation on the covariance matrix is firstly made after sampling `1000` points and would then be updated once every `100` steps until the    
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L376](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L376):
 ```
     adaptive_setting = {'lower_adapt':1000, 'upper_adapt':100000,'update_interval':100}
