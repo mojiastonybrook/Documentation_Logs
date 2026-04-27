@@ -70,10 +70,11 @@ The purpose of using this setting above is to boost the burn-in stage of MCMC wi
 ### Stage 2
 As shown in the scheme, at the very begining of `Stage 2` the chain has to "forget" the previous history of adapation because so far the adapted covariance matrix is calculated by steps mostly sampled in the burn-in period and we hope to improve the quality of the adaptive covariance matrix with more steps when the chain is at its equilibrium. So we ***reset*** the adaptive covariance matrix, the mean values of the parameters and the adapation step counter to `0`. This feature is implemented in `JointAtmFit_Asimov` 
 [https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L76-L80](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L76-L80):
-  ```
+-  ```
        cov->setNumberOfSteps(0);
        cov->useSeparateThrowMatrixReset(adaptiveFileName.c_str(),adaptiveMatrixName.c_str(),adaptiveMeanName.c_str());
-  ```
+   ```
+utlizing functions defined in the `covarianceBase` class [https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp).
 
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
 ```
