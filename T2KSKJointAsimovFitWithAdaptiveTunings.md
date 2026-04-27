@@ -59,6 +59,13 @@ The chain starts with initial setting; the adapation on the covariance matrix is
     adaptive_setting = {'lower_adapt':1000, 'upper_adapt':100000,'update_interval':100}
   ```
 
+The job to produce a chain at this stage lasts only for `1` interation
+- [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L375](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L375)
+  ```
+    nIterations = 1
+  ```
+**NOTE**: For simplicity and convenience in practice, the amount of steps of each job interation is forced to be set as `100000`, which is also indicated in the manual of the job batch submitter.  
+  
 ### Stage 2
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
 ```
