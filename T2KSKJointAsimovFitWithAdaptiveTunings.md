@@ -64,7 +64,7 @@ The job to produce a chain at this stage lasts only for `1` interation
   ```
     nIterations = 1
   ```
-**NOTE**: For simplicity and convenience in practice, the amount of steps of each job interation is forced to be set as `100000`, which is also indicated in the manual of the job batch submitter.  
+**NOTE**: For simplicity and convenience in practice, the amount of steps of each job interation is forced to be set as `100000`, which is also indicated in the manual of the job batch submitter. This amount is the same for the jobs at all stages. 
   
 ### Stage 2
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
