@@ -76,24 +76,14 @@ As shown in the scheme, at the very begining of `Stage 2` the chain has to "forg
    ```
 utlizing functions defined in the `covarianceBase` class [https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp).
 
-[https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
+Besides setting the adaptive covariance matrix, the mean values of the parameters and the adapation step counter to `0`, the final saved adaptive covariance matrix from last stage would be read in to form the initial proposal function at ***reset***. 
+
+The chain would then first accumulate `100000` samples with this proposal function and calculate a new adaptive covariance matrix from those samples; the covariance matrix then is to be updated once every `1000` steps and the auto-adaption stops when there are `200000` steps accumulated with adaption at this stage, according to the following set-up in batch job submitter [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
 ```
     adaptive_setting = {'lower_adapt':10000, 'upper_adapt':200000,'update_interval':1000}
 ```
 
-   On **Beluga** the environments should be :
-```
-module load nixpkgs/16.09
-module load gcc/4.8.5
-module load gsl/1.16
-module load cuda/7.5.18
-export CUDAPATH=${CUDA_HOME}
-```
-
-A password to IRODS might be needed and for that go to the T2K website: ` https://t2k.org/asg/oagroup/gadatastorage/index_html`, look for the section of ***iRODS web interface***. 
-But the server of iRODS might be problematic for now, so expect downloading nothing from the running the command.
-
-
+The reseting of adaption only happens for once at `Stage 2`, specificaly to the chain produced by a job of the first iteration at this stage.  
 ## Adaption-off Phase
 Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3, otherwise errors would appear during the executable running.
 
