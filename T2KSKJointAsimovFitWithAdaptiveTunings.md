@@ -68,7 +68,12 @@ The job to produce a chain at this stage lasts only for `1` interation
   
 The purpose of using this setting above is to boost the burn-in stage of MCMC with the help of auto-adapation on the step sizes of the additional detector uncertainty parameters, so hopefully by the end of a `Stage 1` job, a chain could reach or be close to its equilibrium status. The sampling is then moved to `Stage 2` where the adapative covariance matrix would be updated with samples collected from the equilibrium region in the parameter space.  
 ### Stage 2
-As shown in the scheme, at the very begining of `Stage 2` the chain has to "forget" the previous history of adapation because so far the adapted covariance matrix is calculated by steps mostly sampled in the burn-in period and we hope to improve the quality of the adaptive covariance matrix with more steps when the chain is at its equilibrium. So we ***reset***    
+As shown in the scheme, at the very begining of `Stage 2` the chain has to "forget" the previous history of adapation because so far the adapted covariance matrix is calculated by steps mostly sampled in the burn-in period and we hope to improve the quality of the adaptive covariance matrix with more steps when the chain is at its equilibrium. So we ***reset*** the adaptive covariance matrix, the mean values of the parameters and the adapation step counter to `0`. This feature is implemented in `JointAtmFit_Asimov` 
+[https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L76-L80](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L76-L80):
+  ```
+       cov->setNumberOfSteps(0);
+       cov->useSeparateThrowMatrixReset(adaptiveFileName.c_str(),adaptiveMatrixName.c_str(),adaptiveMeanName.c_str());
+  ```
 
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
 ```
