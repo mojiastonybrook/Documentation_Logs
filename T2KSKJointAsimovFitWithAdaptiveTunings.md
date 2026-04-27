@@ -66,7 +66,7 @@ The job to produce a chain at this stage lasts only for `1` interation
   ```
   **NOTE**: For simplicity and convenience in practice, the amount of steps of each job interation is forced to be set as `100000`, which is also indicated in the manual of the job batch submitter. This amount is the same for the jobs at all stages. 
   
-The purpose of using this setting above is to boost the burn-in stage of MCMC with the help of auto-adapation on the step sizes of the additional detector uncertainty parameters
+The purpose of using this setting above is to boost the burn-in stage of MCMC with the help of auto-adapation on the step sizes of the additional detector uncertainty parameters, so hopefully by the end of the job, the chain could reach or be close to its equilibrium status.  
 ### Stage 2
 
 [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L388):
