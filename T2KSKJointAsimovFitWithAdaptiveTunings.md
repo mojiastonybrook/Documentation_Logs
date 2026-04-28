@@ -108,5 +108,6 @@ Within the current framework of MaCh3, we set the following in job batch submitt
   ```
         adaptive_setting = {'lower_adapt':10000, 'upper_adapt':10001,'update_interval':1000}
   ```
+At this stage, the adaption step number counter `total_steps` should be well beyond the set value of `upper_adapt`, so in this version of [MaCh3](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst) the covariance matrix would not be updated any more.
 
 ## Supporting Functions in MaCh3 
