@@ -84,7 +84,9 @@ The chain would then first accumulate `100000` samples with this proposal functi
     adaptive_setting = {'lower_adapt':10000, 'upper_adapt':200000,'update_interval':1000}
   ```
 
-The reseting of adaption only happens for once at `Stage 2`, specificaly to the chain produced by job of the first iteration at this stage. For that specific job scripit, a flag `RESETADAPTION` in configuration card (example [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L49](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L49)) should be set as `true`, which is done by function setting up `Stage 2` scripts in the job batch submitter as 
+**NOTE:** 
+
+The reseting of adaption only happens for once at `Stage 2`, specificaly to the chain produced by job of the first iteration at this stage. For that specific job scripit, a flag `RESETADAPTION` in configuration card (example [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L49](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L49)) should be set as `true`, which is done by the function setting up `Stage 2` scripts in the job batch submitter as 
 - [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L407](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L407)
   ```
     SedCommand = "sed -i 's|RESETADAPTION.*|RESETADAPTION = true|' "+configs[ijob][iexe]
