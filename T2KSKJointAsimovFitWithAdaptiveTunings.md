@@ -100,7 +100,7 @@ The job to produce a chain at this stage lasts for `2` interations by default:
 In principal, there could be any numbers of iterations or any amount of steps at this stage, as long as the setting of `lower_adapt`, `upper_adapt`, `NSTEPS` for each iteration and the number of iterations is compatible to each other.
 
 ## Adaption-off Phase
-
+We belive the final adaptive covariance matrix by the end of `Stage 2` is optimized with most of the steps used in the calculation of the matrix being sampled at the chain's equilibrium state. Moving on to the next stage, the adaptive covariance matrix is frozen at its final values during `Stage 3`.   
 ### Stage 3
 - [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L491](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L491)
   ```
