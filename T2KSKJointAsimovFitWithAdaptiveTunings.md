@@ -84,7 +84,7 @@ The chain would then first accumulate `100000` samples with this proposal functi
     adaptive_setting = {'lower_adapt':10000, 'upper_adapt':200000,'update_interval':1000}
   ```
 
-The reseting of adaption only happens for once at `Stage 2`, specificaly to the chain produced by a job of the first iteration at this stage.  
+The reseting of adaption only happens for once at `Stage 2`, specificaly to the chain produced by job of the first iteration at this stage. For that specific job scripit, a flag ``   
 ## Adaption-off Phase
 Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3, otherwise errors would appear during the executable running.
 
