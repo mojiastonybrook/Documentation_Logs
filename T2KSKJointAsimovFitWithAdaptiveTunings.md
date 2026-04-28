@@ -94,8 +94,9 @@ The reseting of adaption only happens for once at `Stage 2`, specificaly to the 
 
 
 ## Adaption-off Phase
-Before running MaCh3 execuables, check if the following necessary inputs exit for MaCh3, otherwise errors would appear during the executable running.
 
 ### Stage 3
-
-
+- [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L491](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L491)
+  ```
+        adaptive_setting = {'lower_adapt':10000, 'upper_adapt':10001,'update_interval':1000}
+  ```
