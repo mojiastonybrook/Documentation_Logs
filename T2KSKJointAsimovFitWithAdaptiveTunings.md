@@ -103,6 +103,7 @@ In principal, there could be any numbers of iterations or any amount of steps at
 We belive the final adaptive covariance matrix by the end of `Stage 2` is optimized with most of the steps used in the calculation of the matrix being sampled at the chain's equilibrium state. Moving on to the next stage, the adaptive covariance matrix is frozen at those final values with no more adaptions in `Stage 3`. So in this phase, the chains could be considered as normal MCMC chains and only the steps collected during this phase would be used for analysis later.
 
 ### Stage 3
+Within the current framework of MaCh3, we set the following in job batch submitter to turn off auto-adaption at this stage: 
 - [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L491](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L491)
   ```
         adaptive_setting = {'lower_adapt':10000, 'upper_adapt':10001,'update_interval':1000}
