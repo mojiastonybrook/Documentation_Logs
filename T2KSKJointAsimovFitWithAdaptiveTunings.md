@@ -126,3 +126,5 @@ Most of the functions related to auto-adaption feature could be found in the [`c
 - [useSeparateThrowMatrix](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1195)
 - [useSeparateThrowMatrixReset](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1203)
 - [useSeparateThrowMatrix()](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1154)
+- [updateAdaptiveCovariance](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1252)
+- [saveAdaptiveToFile](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1363)
