@@ -115,6 +115,8 @@ At this stage, the adaption step number counter `total_steps` should be well bey
 The setting in configuration card would be referred to the executable in MaCh3. A function using those referred setting values in the executable `JointAtmFit_Asimov` is called `setupAdaptiveCov()`
 - [https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63)
 
+As described above, there are basically three situations in the process of producing MCMC with auto-adaption active:
+- `Stage 1`, the chain starts from scratch and with initial values of covaraince matrix in the proposal function and also starts adaption  
 
 ### `covarianceBase`
 
