@@ -121,4 +121,4 @@ As described above, there are basically three situations in the process of produ
 - `Stage 2`'s following iteration jobs, the chain continues from where it has stooped by the end of last job and aslo reassumes the adaption    
 
 ### `covarianceBase`
-
+Most of the functions related to auto-adaption feature could be found in the [`covarianceBase`](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp) class.
