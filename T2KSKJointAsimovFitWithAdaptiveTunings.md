@@ -111,3 +111,8 @@ Within the current framework of MaCh3, we set the following in job batch submitt
 At this stage, the adaption step number counter `total_steps` should be well beyond the set value of `upper_adapt`, so in this version of [MaCh3](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst) the covariance matrix would not be updated any more.
 
 ## Supporting Functions in MaCh3 
+### `JointAtmFit_Asimov`
+[https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63)
+
+### `covarianceBase`
+
