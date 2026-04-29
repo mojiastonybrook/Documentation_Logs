@@ -112,6 +112,7 @@ At this stage, the adaption step number counter `total_steps` should be well bey
 
 ## Supporting Functions in MaCh3 
 ### `JointAtmFit_Asimov`
+The setting in configuration card would be referred to the executable in MaCh3. A function using those referred setting values in the executable `JointAtmFit_Asimov` is 
 [https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63)
 
 ### `covarianceBase`
