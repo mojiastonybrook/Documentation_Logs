@@ -116,7 +116,9 @@ The setting in configuration card would be referred to the executable in MaCh3. 
 - [https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/AtmJointFit_Src/JointAtmFit_Asimov.cpp#L63)
 
 As described above, there are basically three situations in the process of producing MCMC with auto-adaption active:
-- `Stage 1`, the chain starts from scratch and with initial values of covaraince matrix in the proposal function and also starts adaption  
+- `Stage 1`, the chain starts from scratch and with initial values of covaraince matrix in the proposal function; it also begins adaption
+- `Stage 2`'s first iteration job, the chain continues from where it has stopped by the end of last job; it takes the adapted covariance matrix from previou job in the proposal function and then reset the memory of adaption to zeros in order to start adaption from scratch again;
+- `Stage 2`'s following iteration jobs, the chain continues from where it has stooped by the end of last job and aslo reassumes the adaption    
 
 ### `covarianceBase`
 
