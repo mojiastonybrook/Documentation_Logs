@@ -92,7 +92,7 @@ The reseting of adaption only happens for once at `Stage 2`, specificaly to the 
     SedCommand = "sed -i 's|RESETADAPTION.*|RESETADAPTION = true|' "+configs[ijob][iexe]
   ```
 
-The job to produce a chain at this stage lasts for `2` interations by default: 
+The job to produce a chain at this stage lasts for `2` iterations by default: 
 - [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L386](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L386)
   ```
     nIterations = 2
@@ -108,7 +108,14 @@ Within the current framework of MaCh3, we set the following in job batch submitt
   ```
         adaptive_setting = {'lower_adapt':10000, 'upper_adapt':10001,'update_interval':1000}
   ```
-At this stage, the adaption step number counter `total_steps` should be well beyond the set value of `upper_adapt`, so in this version of [MaCh3](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst) the covariance matrix would not be updated any more.
+At this stage, the adaption step number counter `total_steps` should be well beyond the set value of `upper_adapt`, so in this version of [MaCh3](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst) the covariance matrix would not be updated any more. The other values in this setting is to keep the auto-adaption implementation uniform. 
+
+As the current set-up in the job batch submitter, there are `3` iterations of jobs at this stage:
+- [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L489](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L489)
+  ```
+     nIterations = 3
+  ```
+The number of iterations could be set as any values.
 
 ## Supporting Functions in MaCh3 
 ### `JointAtmFit_Asimov`
