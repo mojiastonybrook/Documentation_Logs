@@ -14,7 +14,7 @@ This scheme is realized in the MaCh3 version specified for the T2K-SK joint anal
 ### Auto-adaption configuration
 A template of the configuration card for executing T2K-SK joint Asimov fit in MaCh3 is [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/main/AtmConfig_adaptiveMC_temp_GlobalSize.cfg](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/main/AtmConfig_adaptiveMC_temp_GlobalSize.cfg).
 
-The auto-adaption on step sizes are on for `AtmSKDet` (shifting and smearing parameters), `SKCalibration` (supplementary SK-sample-specified uncertainties) and `SKDetBeam` (supplementary T2K-sample-specified uncertainties) with the following commands in the card:
+The auto-adaption on step sizes are activated for `AtmSKDet` (shifting and smearing parameters), `SKCalibration` (supplementary SK-sample-specified uncertainties) and `SKDetBeam` (supplementary T2K-sample-specified uncertainties) with the following commands in the card:
 ```
 // AtmSKDet
 USEADAPTIVEATMSKDET = true
@@ -37,9 +37,9 @@ ADAPTIVEMATRIXNAMESKDETBEAM = "skdetbeam_covariance"
 ADAPTIVEMEANNAMESKDETBEAM = "skdetbeam_means"
 ADAPTIVEBLOCKSSKDETBEAM = []
 ```
-The `ADAPTIVEFILENAME` for each group indicates where the adapted covariance matrices are saved as root files; the `ADAPTIVEMATRIXNAME` and `ADAPTIVEMEANNAME` are the names of the covariance matrix and the mean values of the parameters stored in that root file.
+The `ADAPTIVEFILENAME[XXX]` for each group indicates where the adapted covariance matrices are saved as root files; the `ADAPTIVEMATRIXNAME[XXX]` and `ADAPTIVEMEANNAME[XXX]` are the names of the covariance matrix and the mean values of the parameters stored in that root file.
 
-If `USEADAPTIVE` is set to `false` then the group will use the default step-size setting in MCMC. In that mode there is no adaption at all in the whole process. 
+If `USEADAPTIVE[XXX]` is set to `false` then the group will use the default step-size setting in MCMC. In that mode there is no adaption at all in the whole process. 
 
 According to adpative MH algorithm, there should be a modfication to the step size scaling factor for each group, which is related to the size of that group. All the parameters with auto-adaption on step sizes are formally treated as entries of one "global matrix"; in this case, each group forms a sub-block in that global matrix, uncorrelated to the other blocks. The following commands indicate that the step size scaling factors respective for the above groups are modfied by the size of the same global matrix and the size is `263` as `224 (atmskdet) + 21 (skcalib) + 18 (skdetbeam)`.  
 ```
@@ -84,7 +84,7 @@ The chain would then first accumulate `100000` samples with this proposal functi
     adaptive_setting = {'lower_adapt':10000, 'upper_adapt':200000,'update_interval':1000}
   ```
 
-**NOTE:** `lower_adapt` and `upper_adapat` would be referred to `ADAPTIONTHRESHOLDS` in configuration card (example: [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L45](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L45)) to control when auto-adaptions happen during MCMC. In MaCh3 [https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst), there is also a counter respective for keeping records of the number of steps with adaption, `total_steps`, which is defined in `covarianceBase` class ([covarianceBase](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.h)). ***Nota bene***, `total_steps` is not always equal to the full amount of steps of the chain, because after resetting adaption `total_steps` is forced to be `0`, meaning that we basically want to start the adaption from scratch again, while the acutal amount of the steps in that one chain is not zero since there are some steps accumulated from last job and the chain just reassumes running where it stops.      
+**NOTE:** `lower_adapt` and `upper_adapat` would be referred to `ADAPTIONTHRESHOLDS` in configuration card (example: [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L45](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L45)) to control when auto-adaptions happen during MCMC. In MaCh3 ([https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst](https://github.com/t2k-software/MaCh3/tree/DBarrow_JointFit_AtmDetSyst)), there is also a counter respective for keeping records of the number of steps with adaption, `total_steps`, which is defined in `covarianceBase` class ([covarianceBase](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.h)). ***Nota bene***, `total_steps` is not always equal to the full amount of steps of the chain, because after resetting adaption `total_steps` is forced to be `0`, meaning that we basically want to start the adaption from scratch again, while the acutal amount of the steps in that one chain is not zero since there are some steps accumulated from last job and the chain just reassumes running where it stops.      
 
 The reseting of adaption only happens for once at `Stage 2`, specificaly to the chain produced by job of the first iteration at this stage. For that specific job scripit, a flag `RESETADAPTION` in configuration card (example: [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L49](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/AtmConfig_adaptiveMC_temp_GlobalSize.cfg#L49)) should be set as `true`, which is done by the function setting up `Stage 2` scripts in the job batch submitter as 
 - [https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L407](https://github.com/mojiastonybrook/MaCh3JobSubmitterForAdaptMC/blob/0c1c48d5140a4826c37e0efe4a46fa8ee68ff50d/LetsGo_Adaptive_vGlob.py#L407)
@@ -128,7 +128,7 @@ As described above, there are basically three situations in the process of produ
 - `Stage 2`'s following iteration jobs, the chain continues from where it has stooped by the end of last job and aslo reassumes the adaption    
 
 ### `covarianceBase`
-Most of the functions related to auto-adaption feature could be found in the [`covarianceBase`](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp) class. Here are a few important functions:
+Most of the functions related to the auto-adaption feature could be found in the [`covarianceBase`](https://github.com/t2k-software/MaCh3/blob/DBarrow_JointFit_AtmDetSyst/covariance/covarianceBase.cpp) class. Here are a few important functions:
 
 - [useSeparateThrowMatrix](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1195)
 - [useSeparateThrowMatrixReset](https://github.com/t2k-software/MaCh3/blob/07e7abdbecafc835698789db87ffeb0dfb8511b1/covariance/covarianceBase.cpp#L1203)
