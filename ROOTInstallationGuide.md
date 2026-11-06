@@ -74,7 +74,7 @@ The versions of `root` and `python` are chosen to align with other developer's c
 ---
 
 ## Step 1 — Install Dependencies
-There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms [http://root.cern/install/dependencies/](http://root.cern/install/dependencies/). The   
+There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms, [http://root.cern/install/dependencies/](http://root.cern/install/dependencies/). The ones working with ubuntu are shown [here](http://root.cern/install/dependencies/)   
 ### 1.1 Required Packages Summary
 
 #### Core Dependencies
@@ -85,7 +85,7 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - **Graphics:** `libx11-dev`, `libxext-dev`, `libxft-dev`, `libxpm-dev`, `libgif-dev`
 - **Parallel computing:** `libtbb-dev`
 - **Mathematics:** `libvdt-dev`
-- **Davix:** `davix-dev` (≥ 0.6.4; **NOTE** It is required by `root` implicitly set `davix=ON` in cmake configuration which is however not covered by cern's core inventory.)
+- **Davix:** `davix-dev` (≥ 0.6.4; **NOTE:** It is required by `root` implicitly set `davix=ON` in cmake configuration which is however not covered by cern's core inventory.)
 
 #### Common Optional Packages
 
@@ -118,7 +118,7 @@ There packages could be built-in along installing root without manual installati
 - cppzmq
 
 ### 1.2 Installation
-#### Install required packages
+#### 1. Install required packages
 ```bash
 sudo apt update
 
@@ -157,7 +157,7 @@ sudo apt install -y \
   openmpi-bin
 ```
 
-#### install optional packages
+#### 2. install optional packages
 
 ```bash
 sudo apt install -y \
