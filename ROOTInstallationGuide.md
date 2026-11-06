@@ -206,7 +206,7 @@ Ubuntu suggests developers use `pyenv` to manage different python versions on on
 #### Install and enable `pyenv`
 Follow the instruction to install `pyenv`, [https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv](https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv)
 #### Check if all the prerequisites for python have been installed
-For ubuntu, an example is provided here: (https://github.com/pyenv/pyenv/wiki#suggested-build-environment)[https://github.com/pyenv/pyenv/wiki#suggested-build-environment].
+For ubuntu, an example is provided here: [https://github.com/pyenv/pyenv/wiki#suggested-build-environment](https://github.com/pyenv/pyenv/wiki#suggested-build-environment).
 #### Download and install python 3.13.7
 Run 
 ```bash
@@ -221,9 +221,10 @@ pyenv global 3.13.7
 
 ---
 
-## Sec. 3 — CMake Configuration
-
-### 3.1 Bundled Libraries
+## Step 3 — Configure CMake 
+### 3.1 Summary of additional compiling options
+The default cmake options of building root 6.36 could be found here: [http://root.cern/install/build_from_source/#all-build-options]([http://root.cern/install/dependencies/](http://root.cern/install/build_from_source/#all-build-options). The following summary table thus explicitly states only the options that are set as opposite to their defaults.
+#### Bundled Libraries
 
 - `builtin_pcre=ON`
 - `builtin_nlohmannjson=ON`
@@ -232,29 +233,44 @@ pyenv global 3.13.7
 - `builtin_zeromq=ON`
 - `builtin_cppzmq=ON`
 
-### 3.2 Mathematical and Statistical Libraries
+#### Mathematical and Statistical Libraries
 
 - `mathmore=ON`
 - `unfold=ON`
 - `unuran=ON`
 - `fftw3=ON`
 
-### 3.3 Machine Learning
+#### Machine Learning
 
 - `tmva-sofie=ON`
 
-### 3.4 Parallel Computing
+#### Parallel Computing
 
 - `mpi=ON`
 - `minuit2_omp=ON`
 - `roofit_multiprocess=ON`
 
-### 3.5 Additional Build Options
+#### Additional Build Options
 
 - `soversion=ON`
 - `fail-on-missing=ON`
 
-### 3.6 CMake Configuration Commands
+### 3.2 Download `root` source file
+#### create a directory structure 
+For example
+```
+
+├─ Software/
+        ├── root/
+        │    ├── src/           # ROOT source code
+        │    ├── build/         # CMake build files
+        │    └── install/       # Installed ROOT
+        │
+        └── geant4/            # Future other installations for example
+
+```
+
+### 3.3 CMake Configuration Commands
 
 ```bash
 # Define directories
