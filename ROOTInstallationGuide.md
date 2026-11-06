@@ -221,7 +221,7 @@ pyenv global 3.13.7
 
 ---
 
-## Step 3 — Configure CMake 
+## Step 3 — Configure `root` 
 ### 3.1 Summary of additional compiling options
 The default cmake options of building root 6.36 could be found here: [http://root.cern/install/build_from_source/#all-build-options](http://root.cern/install/build_from_source/#all-build-options). The following summary table thus explicitly states only the options that are set as opposite to their defaults.
 #### Bundled Libraries
@@ -315,6 +315,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$installdir $sourcedir \
 
 Run command:
 ```bash
+# Build ROOT, and install 
 cmake --build . --target install
 ```
 
