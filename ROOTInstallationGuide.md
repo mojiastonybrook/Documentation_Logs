@@ -1,5 +1,6 @@
 # ROOT Installation Guide
-This is a documentation of the installation of `root` to a personal local computer with linux system, for the purpose of developing and testing `nnxssst` for JUNO neutrino oscillation analysis.
+This is a documentation of the installation of `root` to a personal local computer with linux system, for the purpose of developing and testing `nnxssst` for JUNO neutrino oscillation analysis. Instead of using a precompiled binary package of root, this documentation compiles `root` from its source files in order to have full control and configurations of the software.
+
 ## Overall Summary
 The versions of `root` and `python` are chosen to align with other developer's computing environment for `nnxssst`. The features of `root` are extended to include a comprehensive set of functions based on user's own choice.
 
@@ -73,7 +74,7 @@ The versions of `root` and `python` are chosen to align with other developer's c
 ---
 
 ## Sec. 1 — Dependencies Summary
-
+There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms  
 ### 1.1 Required Packages
 
 #### Core Dependencies
