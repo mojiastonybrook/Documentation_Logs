@@ -74,7 +74,7 @@ The versions of `root` and `python` are chosen to align with other developer's c
 ---
 
 ## Step 1 — Install Dependencies
-There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms [root.cern/install/dependencies/](root.cern/install/dependencies/). The   
+There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms [http://root.cern/install/dependencies/](http://root.cern/install/dependencies/). The   
 ### 1.1 Required Packages Summary
 
 #### Core Dependencies
@@ -85,7 +85,7 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - **Graphics:** `libx11-dev`, `libxext-dev`, `libxft-dev`, `libxpm-dev`, `libgif-dev`
 - **Parallel computing:** `libtbb-dev`
 - **Mathematics:** `libvdt-dev`
-- **Davix:** `davix-dev` (≥ 0.6.4; **NOTE**required as default `davix=ON` although not specifically mentioned by cern's website)
+- **Davix:** `davix-dev` (≥ 0.6.4; **NOTE** It is required by `root` implicitly set `davix=ON` in cmake configuration which is however not covered by cern's core inventory.)
 
 #### Common Optional Packages
 
