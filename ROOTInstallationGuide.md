@@ -73,9 +73,9 @@ The versions of `root` and `python` are chosen to align with other developer's c
 
 ---
 
-## Sec. 1 — Dependencies Summary
-There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms  
-### 1.1 Required Packages
+## Step 1 — Install Dependencies
+There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms [root.cern/install/dependencies/](root.cern/install/dependencies/). The   
+### 1.1 Required Packages Summary
 
 #### Core Dependencies
 
@@ -85,18 +85,9 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - **Graphics:** `libx11-dev`, `libxext-dev`, `libxft-dev`, `libxpm-dev`, `libgif-dev`
 - **Parallel computing:** `libtbb-dev`
 - **Mathematics:** `libvdt-dev`
+- **Davix:** `davix-dev` (≥ 0.6.4; **NOTE**required as default `davix=ON` although not specifically mentioned by cern's website)
 
-#### Additional Requirements for the Selected Configuration
-
-- **Davix:** `davix-dev` (≥ 0.6.4; required for default `davix=ON` with system Davix)
-- **MathMore:** `libgsl-dev`
-- **FFTW3:** `libfftw3-dev`
-- **XML and unfolding:** `libxml2-dev`
-- **TMVA SOFIE:** `libprotobuf-dev`, `protobuf-compiler`
-- **MPI:** `libopenmpi-dev`, `openmpi-bin`
-- **OpenMP:** Provided by GCC
-
-### 1.2 Common Optional Packages
+#### Common Optional Packages
 
 - **Mathematics:** `gfortran`
 - **OpenGL and graphics:** `libgl-dev`, `libglu1-mesa-dev`, `libglew-dev`, `libgl2ps-dev`, `libgraphviz-dev`
@@ -107,8 +98,18 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - **Network and authentication:** `libcurl4-openssl-dev`, `libkrb5-dev`
 - **Utilities:** `libreadline-dev`
 
-### 1.3 Bundled Dependencies
+#### Additional Requirements for the Selected Configuration
 
+- **MathMore:** `libgsl-dev`
+- **FFTW3:** `libfftw3-dev`
+- **XML and unfolding:** `libxml2-dev`
+- **TMVA SOFIE:** `libprotobuf-dev`, `protobuf-compiler`
+- **MPI:** `libopenmpi-dev`, `openmpi-bin`
+- **OpenMP:** Provided by GCC
+
+
+#### Bundled Dependencies
+There packages could be built-in along installing root without manual installations to the ubuntu platform: 
 - PCRE
 - nlohmann/json
 - UNU.RAN
@@ -116,8 +117,8 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - ZeroMQ
 - cppzmq
 
-### 1.4 Required Packages — Installation
-
+### 1.2 Installation
+#### Install required packages
 ```bash
 sudo apt update
 
@@ -156,7 +157,7 @@ sudo apt install -y \
   openmpi-bin
 ```
 
-### 1.5 Common Optional Packages — Installation
+#### install optional packages
 
 ```bash
 sudo apt install -y \
@@ -190,7 +191,7 @@ sudo apt install -y \
 
 ---
 
-## Sec. 2 — Python Settings
+## Step 2 — Set Python
 
 ### 2.1 Python Environment
 
