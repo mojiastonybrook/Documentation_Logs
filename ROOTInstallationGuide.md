@@ -309,32 +309,30 @@ cmake -DCMAKE_INSTALL_PREFIX=$installdir $sourcedir \
 
 ---
 
-## Sec. 4 — Compiling and Installing
+## Step 4 — Compiling and Installing
 
-### 4.1 Compilation
+### 4.1 Compile and install
 
-- **Command:** `cmake --build`
-- **Build directory:** `$builddir`
-
-### 4.2 Installation
-
-- **Command:** `cmake --install`
-- **Destination:** `$installdir`
-- **Environment setup:** `thisroot.sh`
-
-### 4.3 Commands
-
+Run command:
 ```bash
-# Compile ROOT
-cmake --build "$builddir"
+cmake --build . --target install
+```
 
-# Install ROOT
-cmake --install "$builddir"
-
+### 4.2 Source shell script after installation
+```bash
 # Activate ROOT
 source "$installdir/bin/thisroot.sh"
 ```
 
+### 4.3 Simple checks
+
+```bash
+root-config --version
+```
+and
+```bash
+root-config --features
+```
 ---
 
 ## References
