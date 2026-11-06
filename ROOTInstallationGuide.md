@@ -74,10 +74,10 @@ The versions of `root` and `python` are chosen to align with other developer's c
 ---
 
 ## Step 1 — Install Dependencies
-There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms, [http://root.cern/install/dependencies/](http://root.cern/install/dependencies/). The ones working with ubuntu are shown [here](http://root.cern/install/dependencies/)   
-### 1.1 Required Packages Summary
+There are prerequisite packages and libraries to configure, build and run `root`. CERN's website of root lists the contents that are needed by different `root` versions on various platforms, [http://root.cern/install/dependencies/](http://root.cern/install/dependencies/). The ones working with ubuntu are shown [here](https://root.cern/install/dependencies/#ubuntu-and-other-debian-based-distributions). If users choose more options when building `root`, there will be additional requirements as well.   
+### 1.1 Dependencies Summary
 
-#### Core Dependencies
+#### Core Packages
 
 - **Build tools:** `build-essential`, `binutils`, `cmake`, `dpkg-dev`, `git`, `pkgconf`
 - **Python:** `python3`, `python3-dev`
@@ -98,7 +98,7 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - **Network and authentication:** `libcurl4-openssl-dev`, `libkrb5-dev`
 - **Utilities:** `libreadline-dev`
 
-#### Additional Requirements for the Selected Configuration
+#### Additional Requirements for the User Selected Configuration
 
 - **MathMore:** `libgsl-dev`
 - **FFTW3:** `libfftw3-dev`
@@ -106,7 +106,6 @@ There are prerequisite packages and libraries to configure, build and run `root`
 - **TMVA SOFIE:** `libprotobuf-dev`, `protobuf-compiler`
 - **MPI:** `libopenmpi-dev`, `openmpi-bin`
 - **OpenMP:** Provided by GCC
-
 
 #### Bundled Dependencies
 There packages could be built-in along installing root without manual installations to the ubuntu platform: 
@@ -118,11 +117,12 @@ There packages could be built-in along installing root without manual installati
 - cppzmq
 
 ### 1.2 Installation
+Update ubuntu's application list with `apt update` 
 #### 1. Install required packages
 ```bash
 sudo apt update
 
-sudo apt install -y \
+sudo apt install \
   build-essential \
   binutils \
   cmake \
@@ -160,7 +160,7 @@ sudo apt install -y \
 #### 2. install optional packages
 
 ```bash
-sudo apt install -y \
+sudo apt install \
   gfortran \
   \
   libgl-dev \
