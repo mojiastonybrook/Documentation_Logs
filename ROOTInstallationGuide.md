@@ -223,7 +223,7 @@ pyenv global 3.13.7
 
 ## Step 3 — Configure CMake 
 ### 3.1 Summary of additional compiling options
-The default cmake options of building root 6.36 could be found here: [http://root.cern/install/build_from_source/#all-build-options]([http://root.cern/install/dependencies/](http://root.cern/install/build_from_source/#all-build-options). The following summary table thus explicitly states only the options that are set as opposite to their defaults.
+The default cmake options of building root 6.36 could be found here: [http://root.cern/install/build_from_source/#all-build-options](http://root.cern/install/build_from_source/#all-build-options). The following summary table thus explicitly states only the options that are set as opposite to their defaults.
 #### Bundled Libraries
 
 - `builtin_pcre=ON`
@@ -259,37 +259,33 @@ The default cmake options of building root 6.36 could be found here: [http://roo
 #### create a directory structure 
 For example
 ```
-
 ├─ Software/
         ├── root/
         │    ├── src/           # ROOT source code
         │    ├── build/         # CMake build files
         │    └── install/       # Installed ROOT
         │
-        └── geant4/            # Future other installations for example
+        └── geant4/             # Future other installations for example
 
 ```
-
-### 3.3 CMake Configuration Commands
-
+#### put the source file into `root/src`
+This directory where `root`'s sources are will be referred as `<sourcedir>`.
+#### cd into the build directory
+The directory for the build will be referred as `<builddir>.` The whole compiling process followed should happen within this very directory.
+```bash
+cd <builddir>
+```
+The directory where a built `root` is installed will be referred as `<installdir>`.
+### 3.3 CMake Configuration
+Config cmake with the following command. Cmake will handle the dependency between the packages and generate corresponding compiling files automatically. 
 ```bash
 # Define directories
-export sourcedir="$HOME/software/root/6.36.06/src"
-export builddir="$HOME/software/root/6.36.06/build"
-export installdir="$HOME/software/root/6.36.06/install"
-
-# Select Python
-export PYTHON="$HOME/.pyenv/versions/3.13.7/bin/python3"
-
-# Create directories
-mkdir -p "$builddir" "$installdir"
+export sourcedir=<sourcedir>
+export installdir=<installdir>
 
 # Configure ROOT
-cmake -S "$sourcedir" -B "$builddir" \
-  -DCMAKE_INSTALL_PREFIX="$installdir" \
-  -DCMAKE_BUILD_TYPE=Release \
+cmake -DCMAKE_INSTALL_PREFIX=$installdir $sourcedir \
   -DCMAKE_CXX_STANDARD=17 \
-  -DPython3_EXECUTABLE="$PYTHON" \
   \
   -Dbuiltin_pcre=ON \
   -Dbuiltin_nlohmannjson=ON \
