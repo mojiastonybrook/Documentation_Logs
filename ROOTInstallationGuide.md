@@ -1,6 +1,7 @@
 # ROOT Installation Guide
-
+This is a documentation of the installation of `root` to a personal local computer with linux system, for the purpose of developing and testing `nnxssst` for JUNO neutrino oscillation analysis.
 ## Overall Summary
+The versions of `root` and `python` are chosen to align with other developer's computing environment for `nnxssst`. The features of `root` are extended to include a comprehensive set of functions based on user's own choice.
 
 ### Software Environment
 
@@ -8,11 +9,11 @@
 | -------------------- | ------------------------------- |
 | **Operating system** | Ubuntu 26.04 LTS (64-bit Linux) |
 | **ROOT**             | 6.36.06                         |
-| **Python**           | 3.13.7 (pyenv)                  |
+| **Python**           | 3.13.7                          |
 | **C++ standard**     | C++17                           |
 | **Compiler**         | GCC / G++                       |
 | **Build interface**  | CMake                           |
-| **Build type**       | Release                         |
+| **Build type**       | Release (default option)        |
 
 ### Expected ROOT Features
 
