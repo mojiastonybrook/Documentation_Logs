@@ -1,4 +1,4 @@
-# ROOT 6.36.06 Installation Guide — Ubuntu 26.04
+# ROOT Installation Guide
 
 ## Overall Summary
 
