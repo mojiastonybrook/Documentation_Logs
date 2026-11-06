@@ -117,10 +117,13 @@ There packages could be built-in along installing root without manual installati
 - cppzmq
 
 ### 1.2 Installation
-Update ubuntu's application list with `apt update` 
+Update ubuntu's application list
+```bash
+
+sudo apt update
+``` 
 #### 1. Install required packages
 ```bash
-sudo apt update
 
 sudo apt install \
   build-essential \
@@ -157,9 +160,10 @@ sudo apt install \
   openmpi-bin
 ```
 
-#### 2. install optional packages
+#### 2. Install optional packages
 
 ```bash
+
 sudo apt install \
   gfortran \
   \
@@ -192,23 +196,27 @@ sudo apt install \
 ---
 
 ## Step 2 — Set Python
-
+Ubuntu suggests developers use `pyenv` to manage different python versions on one computer, [https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv](https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv). We then switch to a specific python version to make `root` built against that during compiling. 
 ### 2.1 Python Environment
-
 - **Version:** Python 3.13.7
 - **Version manager:** pyenv
-- **Interpreter:** `~/.pyenv/versions/3.13.7/bin/python3`
-- **Dependencies:** NumPy, pip, Python development headers
+- **modules:** NumPy, pip, iminuit, pandas, uproot, pyroot, cppyy
+  
+### 2.2 Use `pyenv` to install a different version of python
+#### Install and enable `pyenv`
+Follow the instruction to install `pyenv`, [https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv](https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv)
+#### Check if all the prerequisites for python have been installed
+For ubuntu, an example is provided here: (https://github.com/pyenv/pyenv/wiki#suggested-build-environment)[https://github.com/pyenv/pyenv/wiki#suggested-build-environment].
+#### Download and install python 3.13.7
+Run 
+```bash
+pyenv install 3.13.7
+```
 
-### 2.2 Python Configuration
+then set `3.13.7` as the global default python version
 
 ```bash
-# Select Python
-export PYTHON="$HOME/.pyenv/versions/3.13.7/bin/python3"
-
-# Install Python dependencies
-"$PYTHON" -m pip install --upgrade pip
-"$PYTHON" -m pip install numpy
+pyenv global 3.13.7
 ```
 
 ---
