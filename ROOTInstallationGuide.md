@@ -122,7 +122,7 @@ Update ubuntu's application list
 
 sudo apt update
 ``` 
-#### 1. Install required packages
+#### - Install required packages
 ```bash
 
 sudo apt install \
@@ -160,7 +160,7 @@ sudo apt install \
   openmpi-bin
 ```
 
-#### 2. Install optional packages
+#### - Install optional packages
 
 ```bash
 
@@ -203,11 +203,11 @@ Ubuntu suggests developers use `pyenv` to manage different python versions on on
 - **modules:** NumPy, pip, iminuit, pandas, uproot, pyroot, cppyy
   
 ### 2.2 Use `pyenv` to install a different version of python
-#### Install and enable `pyenv`
+#### - Install and enable `pyenv`
 Follow the instruction to install `pyenv`, [https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv](https://ubuntu.com/developers/docs/howto/python-setup/?utm_source=chatgpt.com#managing-multiple-python-versions-with-pyenv)
-#### Check if all the prerequisites for python have been installed
+#### - Check if all the prerequisites for python have been installed
 For ubuntu, an example is provided here: [https://github.com/pyenv/pyenv/wiki#suggested-build-environment](https://github.com/pyenv/pyenv/wiki#suggested-build-environment).
-#### Download and install python 3.13.7
+#### - Download and install python 3.13.7
 Run 
 ```bash
 pyenv install 3.13.7
