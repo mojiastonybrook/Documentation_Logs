@@ -269,8 +269,15 @@ The default cmake options of building root 6.36 could be found here: [http://roo
 - `soversion=ON`
 - `fail-on-missing=ON`
 
-### 3.2 Download `root` source file
-#### create a directory structure 
+### 3.2 Prepare to compile `root`
+#### - download `root`'s source files
+The source file of root 6.36.06 can be found at [https://root.cern/releases/release-63606/#source-distribution](https://root.cern/releases/release-63606/#source-distribution).
+
+To extract the zipped file, run
+```bash
+tar -xzvf root_v6.36.06.source.tar.gz
+```
+#### - create a directory structure 
 For example
 ```
 ├─ Software/
@@ -282,9 +289,9 @@ For example
         └── geant4/             # Future other installations for example
 
 ```
-#### put the source file into `root/src`
+#### - put the source file into `root/src`
 This directory where `root`'s sources are will be referred as `<sourcedir>`.
-#### cd into the build directory
+#### - cd into the build directory
 The directory for the build will be referred as `<builddir>.` The whole compiling process followed should happen within this very directory.
 ```bash
 cd <builddir>
