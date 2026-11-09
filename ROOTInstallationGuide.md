@@ -298,7 +298,7 @@ cd <builddir>
 ```
 The directory where a built `root` is installed will be referred as `<installdir>`.
 ### 3.3 Run CMake configuration
-Config cmake with the following command. Cmake will handle the dependency between the packages and generate corresponding compiling files automatically. 
+Configure `root` with cmake by the following command. Cmake will handle the dependency between the packages and libraries required by `root`, and generate corresponding compiling files automatically. 
 ```bash
 # Define directories
 export sourcedir=<sourcedir>
