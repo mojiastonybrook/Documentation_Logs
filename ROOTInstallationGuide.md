@@ -218,6 +218,20 @@ then set `3.13.7` as the global default python version
 ```bash
 pyenv global 3.13.7
 ```
+#### - Install some modules to python
+Update `pip` in case of avoiding warning messages
+```bash
+pip install --upgrade pip
+```
+Install some packages, which are also useful for `nnxssst`
+```bash
+pip install numpy
+pip install iminuit
+pip install pandas
+pip install uproot
+pip install pyroot
+pip install cppyy
+```
 
 ---
 
@@ -276,7 +290,7 @@ The directory for the build will be referred as `<builddir>.` The whole compilin
 cd <builddir>
 ```
 The directory where a built `root` is installed will be referred as `<installdir>`.
-### 3.3 CMake Configuration
+### 3.3 Run CMake configuration
 Config cmake with the following command. Cmake will handle the dependency between the packages and generate corresponding compiling files automatically. 
 ```bash
 # Define directories
@@ -315,7 +329,7 @@ cmake -DCMAKE_INSTALL_PREFIX=$installdir $sourcedir \
 
 Run command:
 ```bash
-# Build ROOT, and install 
+# Build ROOT, and install it to the target directory
 cmake --build . --target install
 ```
 
@@ -325,13 +339,15 @@ cmake --build . --target install
 source "$installdir/bin/thisroot.sh"
 ```
 
-### 4.3 Simple checks
+### 4.3 Quick checks
 
 ```bash
+# Return ROOT's version
 root-config --version
 ```
 and
 ```bash
+# Return ROOT's enabled packages
 root-config --features
 ```
 ---
