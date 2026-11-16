@@ -6,9 +6,19 @@ This documentation describes basic procedures for installing `nnxssst` ([code so
 - Request a CCIN2P3 account and sign up to the `juno` group.  
 
 ## Installation
-It is suggested to create a working directory with user's specific account name in the `/sps/juno` space on CC. Then the packages related to `nnxssst` could be stored in a subdirectory within. For example,
+It is suggested to create a working directory with user's specific account name in the `/sps/juno` space on CC. Then the packages related to `nnxssst` could be stored in a subdirectory within. For example a file structure like
+```
+/sps/juno/
+├─ ${USER}/
+        ├── nnxssst/
+        │    ├── nnxssst sources/           # nnxssst source code
+        │    ├── jobs/                      # remote job scripts
+        │    └── libs/                      # libraries for nnxssst
+        │
+        └── porjects/             # Future other installations for example
 
-
+```
+by running
 ```bash
 mkdir -p /sps/juno/${USER}/nnxssst
 
@@ -16,7 +26,8 @@ cd /sps/juno/${USER}/nnxssst
 ```
 ### 1. Set up the computing environment with Conda
 
-- Make `conda` available in your CC shell using the site’s setup instructions.
+- Make `conda` available in your CC account.
+    
 - Replace the bracketed placeholders before running the commands.
 
 ```bash
@@ -24,7 +35,7 @@ conda create --name nnxssst '<required-package-spec>'
 conda activate nnxssst
 ```
 
-## 2. Download `nnxssst` from GitLab
+### 2. Download `nnxssst` from GitLab
 
 ```bash
 git clone '<GitLab-clone-URL>' nnxssst
@@ -33,7 +44,7 @@ cd nnxssst
 # git checkout '<tag-or-commit>'
 ```
 
-## 3. Set `nnxssst` environment variables
+### 3. Set `nnxssst` environment variables
 
 - Run from the repository root. Replace the example variable names with the names required by `nnxssst`.
 
@@ -43,7 +54,7 @@ export REPLACE_WITH_PROJECT_ROOT_VARIABLE="$(pwd -P)"
 # export REPLACE_WITH_VARIABLE_NAME='/path/to/resource'
 ```
 
-## 4. Run example executables
+## Example jobs
 
 - Replace the executable paths and arguments with those for your checkout.
 
