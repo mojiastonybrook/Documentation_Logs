@@ -76,6 +76,9 @@ dependencies:
 Always activate the new environment before running any codes in `nnxssst` 
 ```bash
 conda activate <ENV_NAME>
+
+# and add the conda path to framework paths
+export PATH=${CONDA_PREFIX}/bin:$PATH
 ```
 
 ### 2. Download `nnxssst` from GitLab
@@ -97,21 +100,81 @@ if only the main repository is downloaded, to download the missing submodules:
 git submodule update --init --recursive
 ```
 ### 3. Set `nnxssst` environment variables
-
-- Run from the repository root. Replace the example variable names with the names required by `nnxssst`.
-
+Add `nnxssst`'s own libraries to `$PYTHONPATH` so python could find corresponding modules.
 ```bash
-export REPLACE_WITH_PROJECT_ROOT_VARIABLE="$(pwd -P)"
-# Add a line for each additional project variable.
-# export REPLACE_WITH_VARIABLE_NAME='/path/to/resource'
+export PYTHONPATH=${workdir}/nnxssst_neutrino_energy_spectrum_fitter/fitter:${PYTHONPATH}
+export PYTHONPATH=${workdir}/nnxssst_neutrino_energy_spectrum_fitter/external/dyb_prediction/src:${PYTHONPATH}
+```
+This could be written into a shell script which should be sourced before running any `nnxssst` codes. 
+## Example jobs
+At this stage, you could try running some simple examples to check if `nnxssst` works. 
+### Interactive example
+The simplest example that could be run interactively is **the Standard test for 6-years NMO**:
+```bash
+# change to the nnxssst installation directory if not already in
+cd ${WORKDIR}/nnxssst_neutrino_energy_spectrum_fitter
+
+python nmo_chi2_fit.py -c config/example.yaml -o output/example --false-mo
+```
+### Example of a single remote job
+To launch a remote job to the CC cluster, a job script with descriptions about the parameters of the job is needed.
+
+Here is an example of a job script to run a chi-square fit **for Neutrino 2026 analysis roughly 210 days JUNO + 30 days TAO data**
+```
+#!/usr/bin/bash
+# submit_job_Nu26.sh
+
+# command to run the script:
+# sbatch submit_job_Nu26.sh
+
+# sbatch settings
+#SBATCH --job-name=nnxssst_%j
+#SBATCH --output=nnxssst_%j.log
+#SBATCH --account=juno
+#SBATCH --partition=htc
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=2G
+#SBATCH --time=0-02:00:00
+#SBATCH --licenses=sps
+
+# secure execution
+set -eo pipefail # removed -u option since cvmfs fails
+
+# definitions
+WORKDIR="/sps/juno/${USER}/nnxssst"
+JOBS="${WORKDIR}/jobs"
+
+NNXSSST="${WORKDIR}/nnxssst_neutrino_energy_spectrum_fitter"
+CONDADIR="${WORKDIR}/conda"
+
+# output
+OUTPUT="${JOBS}/job_${SLURM_JOB_ID}"
+mkdir -p "${OUTPUT}"
+cp submit_job_Nu26.sh ${OUTPUT}
+
+# settings
+source ${CONDADIR}/bin/activate
+conda activate nnxssst_conda
+export PATH=${CONDA_PREFIX}/bin:$PATH
+# Set nnxssst environment variables to PYTHONPATH
+source ${WORKDIR}/setup_nnxssst_pro.sh
+
+config="config/26B_16.5_NO.yaml config/TAO_NO.yaml"
+inputs="./input/26B/26B_1-4b_16.5.root:fixed_binning/data_rate ./input/26B/TAOInputs_2026_6_15.root:IBD_Spectra/IBD_spectrum_bkg_not_subtracted_FV800"
+#toys=""    # "${NNXSSST}/config/toy_parameters.yaml"
+#cp ${config} ${toys} ${OUTPUT}
+
+# processing
+cd ${NNXSSST}
+
+# running
+cmd="python ${NNXSSST}/nmo_chi2_fit.py -c ${config} --input-data ${inputs} -o ${OUTPUT} --hesse --minos DeltaMSq12,DeltaMSq13,sinSqDouble12,sinSqDouble13 --unblind"
+echo ${cmd}
+exec ${cmd}
 ```
 
-## Example jobs
-
-- Replace the executable paths and arguments with those for your checkout.
-
+To submit this job script with `slurm` command:
 ```bash
-'./<path-to-first-executable>' '<first-example-argument>'
-'./<path-to-second-executable>' '<second-example-argument>'
+sbatch submit_job_Nu26.sh
 ```
 
