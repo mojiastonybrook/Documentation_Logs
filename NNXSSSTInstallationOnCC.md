@@ -1,4 +1,5 @@
-# `nnxssst` installation on CC
+# `nnxssst` Installation on IN2P3 Computing Centre (CC)
+This documentation describes basic procedures for installing `nnxssst` ([code source](https://code.ihep.ac.cn/juno-group-b/nnxssst_neutrino_energy_spectrum_fitter)) at CCIN2P3 cluster.  
 
 ## 1. Set up the computing environment with Conda
 
